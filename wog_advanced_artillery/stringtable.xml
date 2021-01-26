@@ -1,0 +1,137 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Project name="wog_advanced_artillery">
+	<Package name="addon_strings">
+		<Container name="Config">
+			<Key ID="STR_WOG_advanced_artillery_D30_displayName">
+				<Original>2A18M (D-30A) (WOG)</Original>
+				<English>2A18M (D-30A) (WOG)</English>
+				<Russian>2А18М (Д-30А) (WOG)</Russian>
+			</Key>
+			<Key ID="STR_WOG_advanced_artillery_Sight_displayName">
+				<Original>&lt;t color='#CCCCCC'&gt;D-726-45 Sight Unit&lt;/t&gt;</Original>
+				<English>&lt;t color='#CCCCCC'&gt;D-726-45 Sight Unit&lt;/t&gt;</English>
+				<Russian>&lt;t color='#CCCCCC'&gt;Прицел Д-726-45&lt;/t&gt;</Russian>
+			</Key>
+			<Key ID="STR_WOG_advanced_artillery_Leveling_displayName">
+				<Original>Leveling</Original>
+				<English>Leveling</English>
+				<Russian>Горизонтирование</Russian>
+			</Key>
+			<Key ID="STR_WOG_advanced_artillery_Open_Breech_displayName">
+				<Original>Open breech</Original>
+				<English>Open breech</English>
+				<Russian>Открыть затвор</Russian>
+			</Key>
+			<Key ID="STR_WOG_advanced_artillery_Close_Breech_displayName">
+				<Original>Close breech</Original>
+				<English>Close breech</English>
+				<Russian>Закрыть затвор</Russian>
+			</Key>
+			<Key ID="STR_WOG_advanced_artillery_Load_Shell_displayName">
+				<Original>Load shell</Original>
+				<English>Load shell</English>
+				<Russian>Зарядить снаряд</Russian>
+			</Key>
+			<Key ID="STR_WOG_advanced_artillery_Unload_Shell_displayName">
+				<Original>Unload shell</Original>
+				<English>Unload shell</English>
+				<Russian>Разрядить снаряд</Russian>
+			</Key>
+			<Key ID="STR_WOG_advanced_artillery_Load_Casing_displayName">
+				<Original>Load casing</Original>
+				<English>Load casing</English>
+				<Russian>Зарядить заряд</Russian>
+			</Key>
+			<Key ID="STR_WOG_advanced_artillery_Unload_Casing_displayName">
+				<Original>Unload casing</Original>
+				<English>Unload casing</English>
+				<Russian>Разрядить заряд</Russian>
+			</Key>
+			<Key ID="STR_WOG_advanced_artillery_Towing_Attach_displayName">
+				<Original>Attach</Original>
+				<English>Attach</English>
+				<Russian>Подцепить</Russian>
+			</Key>
+			<Key ID="STR_WOG_advanced_artillery_Towing_Detach_displayName">
+				<Original>Detach</Original>
+				<English>Detach</English>
+				<Russian>Отцепить</Russian>
+			</Key>
+			<Key ID="STR_WOG_advanced_artillery_122mm_Ammobox_displayName">
+				<Original>122mm HE ammo box</Original>
+				<English>122mm HE ammo box</English>
+				<Russian>Ящик с 122-мм ОФ снарядами</Russian>
+			</Key>
+			<Key ID="STR_WOG_advanced_artillery_Prep_charges_displayName">
+				<Original>Charge Settings</Original>
+				<English>Charge Settings</English>
+				<Russian>Подготовка заряда</Russian>
+			</Key>
+			<Key ID="STR_WOG_advanced_artillery_D30_RangeTable_displayName">
+				<Original>D-30 Range Table (WOG)</Original>
+				<English>D-30 Range Table (WOG)</English>
+				<Russian>Таблица стрельбы для Д-30 (WOG)</Russian>
+			</Key>
+			<Key ID="STR_WOG_advanced_artillery_Current_Charge_displayName">
+				<Original>Current charge</Original>
+				<English>Current charge</English>
+				<Russian>Текущий заряд</Russian>
+			</Key>
+			<Key ID="STR_WOG_advanced_artillery_Required_Charge_displayName">
+				<Original>Required charge</Original>
+				<English>Required charge</English>
+				<Russian>Требуемый заряд</Russian>
+			</Key>
+			<Key ID="STR_WOG_advanced_artillery_Set_Charge_displayName">
+				<Original>Set</Original>
+				<English>Set</English>
+				<Russian>Подготовить</Russian>
+			</Key>
+			<Key ID="STR_WOG_advanced_artillery_Close_displayName">
+				<Original>Close</Original>
+				<English>Close</English>
+				<Russian>Закрыть</Russian>
+			</Key>
+			<Key ID="STR_WOG_advanced_artillery_Left_Leg_displayName">
+				<Original>Left leg</Original>
+				<English>Left leg</English>
+				<Russian>Левая опора</Russian>
+			</Key>
+			<Key ID="STR_WOG_advanced_artillery_Right_Leg_displayName">
+				<Original>Right leg</Original>
+				<English>Right leg</English>
+				<Russian>Правая опора</Russian>
+			</Key>
+			<Key ID="STR_WOG_advanced_artillery_Central_Leg_displayName">
+				<Original>Central leg</Original>
+				<English>Central leg</English>
+				<Russian>Центральная опора</Russian>
+			</Key>
+			<Key ID="STR_WOG_advanced_artillery_Transverse_Level_displayName">
+				<Original>Transverse leveling bubble</Original>
+				<English>Transverse leveling bubble</English>
+				<Russian>Поперечный уровень</Russian>
+			</Key>
+			<Key ID="STR_WOG_advanced_artillery_Longitudinal_Level_displayName">
+				<Original>Longitudinal leveling bubble</Original>
+				<English>Longitudinal leveling bubble</English>
+				<Russian>Продольный уровень</Russian>
+			</Key>
+			<Key ID="STR_WOG_advanced_artillery_Charges_RangeTable_displayName">
+				<Original>Charge: %1</Original>
+				<English>Charge: %1</English>
+				<Russian>Заряд: %1</Russian>
+			</Key>
+			<Key ID="STR_WOG_advanced_artillery_Exec_Attach_displayName">
+				<Original>Attaching...</Original>
+				<English>Attaching...</English>
+				<Russian>Выполнение прицепки...</Russian>
+			</Key>
+			<Key ID="STR_WOG_advanced_artillery_Exec_Detach_displayName">
+				<Original>Detaching...</Original>
+				<English>Detaching...</English>
+				<Russian>Выполнение отцепки...</Russian>
+			</Key>
+		</Container>
+	</Package>
+</Project>
