@@ -4,7 +4,7 @@ class CfgPatches {
         units[] = {};
         weapons[] = {"WOG_RangeTable_D30"};
         requiredVersion = 1.60;
-        requiredAddons[] = {"a3_weapons_f", "ace_interaction", "rhs_c_heavyweapons", "A3_Static_F_Mortar_01", "ruPal_RHS_to_ACE"};
+        requiredAddons[] = {"a3_weapons_f", "ace_interaction", "rhs_c_heavyweapons", "A3_Static_F_Mortar_01", "ruPal_RHS_to_ACE", "rhsgref_c_vehicles_ret"};
         author = "Lex";
     };
 };
@@ -298,8 +298,8 @@ class CfgVehicles
 		};
 	};
 	
-	class rhs_D30_base;
-	class rhs_D30_msv: rhs_D30_base
+	class StaticCannon;
+	class rhs_D30_base: StaticCannon
 	{
 		class Turrets;
 		class MainTurret;
@@ -313,10 +313,11 @@ class CfgVehicles
 		class TransportItems;
 	};
 	
-	class wog_D30_base: rhs_D30_msv
+	class wog_D30_base: rhs_D30_base
 	{
 		model = "wog_advanced_artillery\D30\d30.p3d";
 		displayName = "$STR_WOG_advanced_artillery_D30_displayName";
+		scope = 0;
 		class Turrets: Turrets
 		{
 			class MainTurret: MainTurret
@@ -606,6 +607,113 @@ class CfgVehicles
 				fired = "_this spawn wog_fnc_fired_d30";
 			};
 		};
+	};
+	
+	class rhs_D30_msv: wog_D30_base
+	{
+		editorPreview="rhsafrf\addons\rhs_editorPreviews\data\rhs_D30_msv.paa";
+		scope=2;
+		side=0;
+		author="Red Hammer Studios";
+		faction="rhs_faction_msv";
+		crew="rhs_msv_rifleman";
+		typicalCargo[]=
+		{
+			"rhs_msv_rifleman"
+		};
+	};
+	
+	class rhs_D30_vdv: wog_D30_base
+	{
+		editorPreview="rhsafrf\addons\rhs_editorPreviews\data\rhs_D30_vdv.paa";
+		scope=2;
+		side=0;
+		author="Red Hammer Studios";
+		faction="rhs_faction_vdv";
+		crew="rhs_vdv_rifleman";
+		typicalCargo[]=
+		{
+			"rhs_vdv_rifleman"
+		};
+	};
+	class rhs_D30_vmf: wog_D30_base
+	{
+		editorPreview="rhsafrf\addons\rhs_editorPreviews\data\rhs_D30_vdv.paa";
+		scope=2;
+		side=0;
+		author="Red Hammer Studios";
+		faction="rhs_faction_vmf";
+		crew="rhs_vmf_flora_rifleman";
+		typicalCargo[]=
+		{
+			"rhs_vmf_flora_rifleman"
+		};
+	};
+	class rhs_D30_ins: wog_D30_base
+	{
+		editorPreview="rhsafrf\addons\rhs_editorPreviews\data\rhs_D30_vdv.paa";
+		scope=1;
+		side=2;
+		author="Red Hammer Studios";
+		faction="rhs_faction_insurgents";
+		crew="rhs_g_Soldier_F";
+		typicalCargo[]=
+		{
+			"rhs_g_Soldier_F"
+		};
+	};
+	
+	class rhsgref_cdf_reg_d30: wog_D30_base
+	{
+		editorPreview="rhsgref\addons\rhsgref_editorPreviews\data\rhsgref_cdf_reg_d30.paa";
+		crew="rhsgref_cdf_reg_rifleman";
+		author="RHS (A2 port)";
+		side=2;
+		dlc="RHS_GREF";
+		faction="rhsgref_faction_cdf_ground";
+		scope=2;
+	};
+	
+	class rhsgref_cdf_b_reg_d30: rhsgref_cdf_reg_d30
+	{
+		author="$STR_RHS_AUTHOR_FULL";
+		faction="rhsgref_faction_cdf_ground_b";
+		side=1;
+		scope=2;
+		scopeCurator=2;
+		crew="rhsgref_cdf_b_reg_rifleman";
+	};
+	
+	class rhsgref_nat_d30: wog_D30_base
+	{
+		editorPreview="rhsgref\addons\rhsgref_editorPreviews\data\rhsgref_nat_d30.paa";
+		crew="rhsgref_nat_rifleman";
+		author="RHS (A2 port)";
+		side=2;
+		dlc="RHS_GREF";
+		faction="rhsgref_faction_nationalist";
+		scope=2;
+	};
+	
+	class rhsgref_ins_d30: wog_D30_base
+	{
+		editorPreview="rhsgref\addons\rhsgref_editorPreviews\data\rhsgref_ins_d30.paa";
+		scope=2;
+		crew="rhsgref_ins_rifleman";
+		author="$STR_RHS_AUTHOR_FULL";
+		side=0;
+		dlc="RHS_GREF";
+		faction="rhsgref_faction_chdkz";
+	};
+	
+	class rhsgref_ins_g_d30: rhsgref_ins_d30
+	{
+		faction="rhsgref_faction_chdkz_g";
+		side=2;
+		author="$STR_RHS_AUTHOR_FULL";
+		scope=2;
+		scopeCurator=2;
+		crew="rhsgref_ins_g_rifleman";
 	};
 	
 	class rhs_casing_122mm;
