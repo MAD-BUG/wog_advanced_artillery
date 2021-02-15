@@ -9,6 +9,15 @@ if(!local _v)exitWith{};
 
 //if (!(_ammo isKindOf 'ShellBase')) exitWith {};
 
+//Recoil effect
+private _phase = _v animationPhase "MainGun";
+private _newPhase = ((_phase+(selectRandom [-1, 1])*(selectRandom [0, 1, 2])) min 1167) max -117;
+_v animate ["MainGun", _newPhase];
+
+_phase = _v animationPhase "mainTurret";
+_newPhase = _phase+(selectRandom [-1, 1])*(selectRandom [0, 1, 2]);
+_v animate ["mainTurret", _newPhase];
+
 _v animateSource ["RecoilAnim",1,true];
 waitUntil {(_v animationSourcePhase "RecoilAnim") == 1};
 sleep 0.1;

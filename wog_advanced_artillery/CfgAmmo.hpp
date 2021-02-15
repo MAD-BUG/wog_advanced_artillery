@@ -4,6 +4,7 @@ class CfgAmmo
 {
 	//some experimental stuff with air-burst fuze
 	class rhs_ammo_of462;
+	/*
 	class wog_ammo_of462: rhs_ammo_of462
 	{
 		simulation = "shotSubmunitions";
@@ -18,6 +19,7 @@ class CfgAmmo
 		explosionTime = 0.001;
 		explosionEffects = "HelicopterExplosionEffects2";
 	};
+	*/
 	class wog_ammo_of462_charge_full: rhs_ammo_of462
 	{
 		soundFly[] = {"\wog_advanced_artillery\sounds\projectile_whistle_longer", 15, 1, 800};

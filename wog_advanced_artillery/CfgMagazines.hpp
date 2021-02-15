@@ -1,5 +1,6 @@
 class CfgMagazines
 {
+	/*
 	class Default;
 
 	class CA_Magazine;
@@ -18,6 +19,8 @@ class CfgMagazines
 		descriptionShort = "Used to shoot test bullets"; /// on mouse-over in Inventory
 		magazineGroup[]	= {"test_mag_group"}; /// all magazines in the same group may be used in weapon that has the group defined as compatible
 	};
+	
+	*/
 	
 	class 32Rnd_155mm_Mo_shells;
 	//Dummies

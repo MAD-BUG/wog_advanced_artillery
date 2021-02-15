@@ -1,7 +1,7 @@
-#define TU_ARTY_GUI_GRID_X	(0)
-#define TU_ARTY_GUI_GRID_Y	(0)
-#define TU_ARTY_GUI_GRID_W	(0.025)
-#define TU_ARTY_GUI_GRID_H	(0.04)
+#define WOG_ARTY_GUI_GRID_X	(0)
+#define WOG_ARTY_GUI_GRID_Y	(0)
+#define WOG_ARTY_GUI_GRID_W	(0.025)
+#define WOG_ARTY_GUI_GRID_H	(0.04)
 
 #define SIGHT_GUI_GRID_X safeZoneX + safeZoneH*3/4/2*0.15
 #define SIGHT_GUI_GRID_Y safeZoneY
@@ -23,10 +23,10 @@ class WOG_ARTY_PREP_D {
 			idc = -1;
 			type = 0;
 			style = 2; //centre text
-			x = 5.5 * TU_ARTY_GUI_GRID_W + TU_ARTY_GUI_GRID_X;
-			y = 1 * TU_ARTY_GUI_GRID_H + TU_ARTY_GUI_GRID_Y;
-			w = 30 * TU_ARTY_GUI_GRID_W;
-			h = 10 * TU_ARTY_GUI_GRID_H;
+			x = 5.5 * WOG_ARTY_GUI_GRID_W + WOG_ARTY_GUI_GRID_X;
+			y = 1 * WOG_ARTY_GUI_GRID_H + WOG_ARTY_GUI_GRID_Y;
+			w = 30 * WOG_ARTY_GUI_GRID_W;
+			h = 10 * WOG_ARTY_GUI_GRID_H;
 			font = "EtelkaNarrowMediumPro";
 			sizeEx = 0.03;
 			colorBackground[] = {0,0,0,0.8};
@@ -35,63 +35,63 @@ class WOG_ARTY_PREP_D {
 		};
 		class WOG_Arty_TopBar: WOG_Arty_Background
 		{
-			h = 1.4 * TU_ARTY_GUI_GRID_H;
+			h = 1.4 * WOG_ARTY_GUI_GRID_H;
 			colorBackground[] = {0,0,0.4,0.8};
 		};
 		//current charge
 		class WOG_Arty_RscCombo_2100: WOG_Arty_RscCombo
 		{
 			idc = 2100;
-			x = 17.5 * TU_ARTY_GUI_GRID_W + TU_ARTY_GUI_GRID_X;
-			y = 4 * TU_ARTY_GUI_GRID_H + TU_ARTY_GUI_GRID_Y;
-			w = 16 * TU_ARTY_GUI_GRID_W;
-			h = 1 * TU_ARTY_GUI_GRID_H;
+			x = 17.5 * WOG_ARTY_GUI_GRID_W + WOG_ARTY_GUI_GRID_X;
+			y = 4 * WOG_ARTY_GUI_GRID_H + WOG_ARTY_GUI_GRID_Y;
+			w = 16 * WOG_ARTY_GUI_GRID_W;
+			h = 1 * WOG_ARTY_GUI_GRID_H;
 			onLBSelChanged = "[] call wog_advanced_artillery_prep_update;";
 		};
 		class WOG_Arty_RscText_1000: WOG_Arty_RscText
 		{
 			idc = 3000;
 			text = "$STR_WOG_advanced_artillery_Prep_charges_displayName";
-			x = 15.5 * TU_ARTY_GUI_GRID_W + TU_ARTY_GUI_GRID_X;
-			y = 1.2 * TU_ARTY_GUI_GRID_H + TU_ARTY_GUI_GRID_Y;
-			w = 12 * TU_ARTY_GUI_GRID_W;
-			h = 1 * TU_ARTY_GUI_GRID_H;
+			x = 15.5 * WOG_ARTY_GUI_GRID_W + WOG_ARTY_GUI_GRID_X;
+			y = 1.2 * WOG_ARTY_GUI_GRID_H + WOG_ARTY_GUI_GRID_Y;
+			w = 12 * WOG_ARTY_GUI_GRID_W;
+			h = 1 * WOG_ARTY_GUI_GRID_H;
 		};
 		class WOG_Arty_RscText_1001: WOG_Arty_RscText
 		{
 			idc = 3001;
 			text = "$STR_WOG_advanced_artillery_Current_Charge_displayName";
-			x = 6.5 * TU_ARTY_GUI_GRID_W + TU_ARTY_GUI_GRID_X;
-			y = 4 * TU_ARTY_GUI_GRID_H + TU_ARTY_GUI_GRID_Y;
-			w = 9 * TU_ARTY_GUI_GRID_W;
-			h = 1 * TU_ARTY_GUI_GRID_H;
+			x = 6.5 * WOG_ARTY_GUI_GRID_W + WOG_ARTY_GUI_GRID_X;
+			y = 4 * WOG_ARTY_GUI_GRID_H + WOG_ARTY_GUI_GRID_Y;
+			w = 9 * WOG_ARTY_GUI_GRID_W;
+			h = 1 * WOG_ARTY_GUI_GRID_H;
 		};
 		//required charge
 		class WOG_Arty_RscCombo_2101: WOG_Arty_RscCombo
 		{
 			idc = 3101;
-			x = 17.5 * TU_ARTY_GUI_GRID_W + TU_ARTY_GUI_GRID_X;
-			y = 6 * TU_ARTY_GUI_GRID_H + TU_ARTY_GUI_GRID_Y;
-			w = 16 * TU_ARTY_GUI_GRID_W;
-			h = 1 * TU_ARTY_GUI_GRID_H;
+			x = 17.5 * WOG_ARTY_GUI_GRID_W + WOG_ARTY_GUI_GRID_X;
+			y = 6 * WOG_ARTY_GUI_GRID_H + WOG_ARTY_GUI_GRID_Y;
+			w = 16 * WOG_ARTY_GUI_GRID_W;
+			h = 1 * WOG_ARTY_GUI_GRID_H;
 		};
 		class WOG_Arty_RscText_1003: WOG_Arty_RscText
 		{
 			idc = 3003;
 			text = "$STR_WOG_advanced_artillery_Required_Charge_displayName";
-			x = 6.5 * TU_ARTY_GUI_GRID_W + TU_ARTY_GUI_GRID_X;
-			y = 6 * TU_ARTY_GUI_GRID_H + TU_ARTY_GUI_GRID_Y;
-			w = 9 * TU_ARTY_GUI_GRID_W;
-			h = 1 * TU_ARTY_GUI_GRID_H;
+			x = 6.5 * WOG_ARTY_GUI_GRID_W + WOG_ARTY_GUI_GRID_X;
+			y = 6 * WOG_ARTY_GUI_GRID_H + WOG_ARTY_GUI_GRID_Y;
+			w = 9 * WOG_ARTY_GUI_GRID_W;
+			h = 1 * WOG_ARTY_GUI_GRID_H;
 		};
 		class WOG_Arty_RscButton_1600: WOG_Arty_RscButton
 		{
 			idc = 3600;
 			text = "$STR_WOG_advanced_artillery_Set_Charge_displayName";
-			x = 18.5 * TU_ARTY_GUI_GRID_W + TU_ARTY_GUI_GRID_X;
-			y = 8 * TU_ARTY_GUI_GRID_H + TU_ARTY_GUI_GRID_Y;
-			w = 6 * TU_ARTY_GUI_GRID_W;
-			h = 2 * TU_ARTY_GUI_GRID_H;
+			x = 18.5 * WOG_ARTY_GUI_GRID_W + WOG_ARTY_GUI_GRID_X;
+			y = 8 * WOG_ARTY_GUI_GRID_H + WOG_ARTY_GUI_GRID_Y;
+			w = 6 * WOG_ARTY_GUI_GRID_W;
+			h = 2 * WOG_ARTY_GUI_GRID_H;
 			soundClick[] = 
 			{
 				"",
@@ -104,10 +104,10 @@ class WOG_ARTY_PREP_D {
 		{
 			idc = 3601;
 			text = "$STR_WOG_advanced_artillery_Close_displayName";
-			x = 25.5 * TU_ARTY_GUI_GRID_W + TU_ARTY_GUI_GRID_X;
-			y = 8 * TU_ARTY_GUI_GRID_H + TU_ARTY_GUI_GRID_Y;
-			w = 6 * TU_ARTY_GUI_GRID_W;
-			h = 2 * TU_ARTY_GUI_GRID_H;
+			x = 25.5 * WOG_ARTY_GUI_GRID_W + WOG_ARTY_GUI_GRID_X;
+			y = 8 * WOG_ARTY_GUI_GRID_H + WOG_ARTY_GUI_GRID_Y;
+			w = 6 * WOG_ARTY_GUI_GRID_W;
+			h = 2 * WOG_ARTY_GUI_GRID_H;
 			onMouseButtonClick = "closeDialog 2;";
 		};
 	};
@@ -128,10 +128,10 @@ class WOG_ARTY_LEVEL_D {
 			idc = -1;
 			type = 0;
 			style = 2; //centre text
-			x = 5.5 * TU_ARTY_GUI_GRID_W + TU_ARTY_GUI_GRID_X;
-			y = 1 * TU_ARTY_GUI_GRID_H + TU_ARTY_GUI_GRID_Y;
-			w = 30 * TU_ARTY_GUI_GRID_W;
-			h = 15 * TU_ARTY_GUI_GRID_H;
+			x = 5.5 * WOG_ARTY_GUI_GRID_W + WOG_ARTY_GUI_GRID_X;
+			y = 1 * WOG_ARTY_GUI_GRID_H + WOG_ARTY_GUI_GRID_Y;
+			w = 30 * WOG_ARTY_GUI_GRID_W;
+			h = 15 * WOG_ARTY_GUI_GRID_H;
 			font = "EtelkaNarrowMediumPro";
 			sizeEx = 0.03;
 			colorBackground[] = {0,0,0,0.9};
@@ -140,7 +140,7 @@ class WOG_ARTY_LEVEL_D {
 		};
 		class WOG_Arty_TopBar: WOG_Arty_Background
 		{
-			h = 1.4 * TU_ARTY_GUI_GRID_H;
+			h = 1.4 * WOG_ARTY_GUI_GRID_H;
 			colorBackground[] = {0,0,0.6,0.8};
 		};
 	
@@ -148,46 +148,46 @@ class WOG_ARTY_LEVEL_D {
 		{
 			idc = 3000;
 			text = "$STR_WOG_advanced_artillery_Leveling_displayName";
-			x = 15.5 * TU_ARTY_GUI_GRID_W + TU_ARTY_GUI_GRID_X;
-			y = 1.2 * TU_ARTY_GUI_GRID_H + TU_ARTY_GUI_GRID_Y;
-			w = 12 * TU_ARTY_GUI_GRID_W;
-			h = 1 * TU_ARTY_GUI_GRID_H;
+			x = 15.5 * WOG_ARTY_GUI_GRID_W + WOG_ARTY_GUI_GRID_X;
+			y = 1.2 * WOG_ARTY_GUI_GRID_H + WOG_ARTY_GUI_GRID_Y;
+			w = 12 * WOG_ARTY_GUI_GRID_W;
+			h = 1 * WOG_ARTY_GUI_GRID_H;
 		};
 		class WOG_Arty_RscText_1001: WOG_Arty_RscText
 		{
 			idc = 3001;
 			text = "$STR_WOG_advanced_artillery_Left_Leg_displayName";
-			x = 6.5 * TU_ARTY_GUI_GRID_W + TU_ARTY_GUI_GRID_X;
-			y = 7 * TU_ARTY_GUI_GRID_H + TU_ARTY_GUI_GRID_Y;
-			w = 9 * TU_ARTY_GUI_GRID_W;
-			h = 1 * TU_ARTY_GUI_GRID_H;
+			x = 6.5 * WOG_ARTY_GUI_GRID_W + WOG_ARTY_GUI_GRID_X;
+			y = 7 * WOG_ARTY_GUI_GRID_H + WOG_ARTY_GUI_GRID_Y;
+			w = 9 * WOG_ARTY_GUI_GRID_W;
+			h = 1 * WOG_ARTY_GUI_GRID_H;
 		};
 		class WOG_Arty_RscText_1002: WOG_Arty_RscText
 		{
 			idc = 3002;
 			text = "$STR_WOG_advanced_artillery_Right_Leg_displayName";
-			x = 6.5 * TU_ARTY_GUI_GRID_W + TU_ARTY_GUI_GRID_X;
-			y = 9 * TU_ARTY_GUI_GRID_H + TU_ARTY_GUI_GRID_Y;
-			w = 9 * TU_ARTY_GUI_GRID_W;
-			h = 1 * TU_ARTY_GUI_GRID_H;
+			x = 6.5 * WOG_ARTY_GUI_GRID_W + WOG_ARTY_GUI_GRID_X;
+			y = 9 * WOG_ARTY_GUI_GRID_H + WOG_ARTY_GUI_GRID_Y;
+			w = 9 * WOG_ARTY_GUI_GRID_W;
+			h = 1 * WOG_ARTY_GUI_GRID_H;
 		};
 		class WOG_Arty_RscText_1003: WOG_Arty_RscText
 		{
 			idc = 3003;
 			text = "$STR_WOG_advanced_artillery_Central_Leg_displayName";
-			x = 6.5 * TU_ARTY_GUI_GRID_W + TU_ARTY_GUI_GRID_X;
-			y = 11 * TU_ARTY_GUI_GRID_H + TU_ARTY_GUI_GRID_Y;
-			w = 9 * TU_ARTY_GUI_GRID_W;
-			h = 1 * TU_ARTY_GUI_GRID_H;
+			x = 6.5 * WOG_ARTY_GUI_GRID_W + WOG_ARTY_GUI_GRID_X;
+			y = 11 * WOG_ARTY_GUI_GRID_H + WOG_ARTY_GUI_GRID_Y;
+			w = 9 * WOG_ARTY_GUI_GRID_W;
+			h = 1 * WOG_ARTY_GUI_GRID_H;
 		};
 		
 		class WOG_Arty_RscSlider_1950: WOG_Arty_RscSlider
 		{
 			idc = 1950;
-			x = 18.5 * TU_ARTY_GUI_GRID_W + TU_ARTY_GUI_GRID_X;
-			y = 4.3 * TU_ARTY_GUI_GRID_H + TU_ARTY_GUI_GRID_Y;
-			w = 5 * TU_ARTY_GUI_GRID_W;
-			h = 1 * TU_ARTY_GUI_GRID_H;
+			x = 18.5 * WOG_ARTY_GUI_GRID_W + WOG_ARTY_GUI_GRID_X;
+			y = 4.3 * WOG_ARTY_GUI_GRID_H + WOG_ARTY_GUI_GRID_Y;
+			w = 5 * WOG_ARTY_GUI_GRID_W;
+			h = 1 * WOG_ARTY_GUI_GRID_H;
 			color[] = {0,1,0,1};
 			colorActive[] = {1,1,1,1};
 			sliderPosition = 0;
@@ -200,10 +200,10 @@ class WOG_ARTY_LEVEL_D {
 		{
 			idc = 1951;
 			style = 0;
-			x = 26.5 * TU_ARTY_GUI_GRID_W + TU_ARTY_GUI_GRID_X;
-			y = 2.8 * TU_ARTY_GUI_GRID_H + TU_ARTY_GUI_GRID_Y;
-			w = 1 * TU_ARTY_GUI_GRID_W;
-			h = 3.5 * TU_ARTY_GUI_GRID_H;
+			x = 26.5 * WOG_ARTY_GUI_GRID_W + WOG_ARTY_GUI_GRID_X;
+			y = 2.8 * WOG_ARTY_GUI_GRID_H + WOG_ARTY_GUI_GRID_Y;
+			w = 1 * WOG_ARTY_GUI_GRID_W;
+			h = 3.5 * WOG_ARTY_GUI_GRID_H;
 			color[] = {0.8,0.2,0,1};
 			colorActive[] = {1,1,1,1};
 			sliderPosition = 0;
@@ -215,10 +215,10 @@ class WOG_ARTY_LEVEL_D {
 		class WOG_Arty_RscSlider_1900: WOG_Arty_RscSlider
 		{
 			idc = 3900;
-			x = 15.5 * TU_ARTY_GUI_GRID_W + TU_ARTY_GUI_GRID_X;
-			y = 7 * TU_ARTY_GUI_GRID_H + TU_ARTY_GUI_GRID_Y;
-			w = 16 * TU_ARTY_GUI_GRID_W;
-			h = 1 * TU_ARTY_GUI_GRID_H;
+			x = 15.5 * WOG_ARTY_GUI_GRID_W + WOG_ARTY_GUI_GRID_X;
+			y = 7 * WOG_ARTY_GUI_GRID_H + WOG_ARTY_GUI_GRID_Y;
+			w = 16 * WOG_ARTY_GUI_GRID_W;
+			h = 1 * WOG_ARTY_GUI_GRID_H;
 			color[] = {1,1,1,1};
 			colorActive[] = {1,1,1,1};
 			onSliderPosChanged = "(player getVariable 'WOG_D30_gunObj') animateSource ['leftLiftT_source', _this select 1]";
@@ -229,10 +229,10 @@ class WOG_ARTY_LEVEL_D {
 		class WOG_Arty_RscSlider_1901: WOG_Arty_RscSlider
 		{
 			idc = 3901;
-			x = 15.5 * TU_ARTY_GUI_GRID_W + TU_ARTY_GUI_GRID_X;
-			y = 9 * TU_ARTY_GUI_GRID_H + TU_ARTY_GUI_GRID_Y;
-			w = 16 * TU_ARTY_GUI_GRID_W;
-			h = 1 * TU_ARTY_GUI_GRID_H;
+			x = 15.5 * WOG_ARTY_GUI_GRID_W + WOG_ARTY_GUI_GRID_X;
+			y = 9 * WOG_ARTY_GUI_GRID_H + WOG_ARTY_GUI_GRID_Y;
+			w = 16 * WOG_ARTY_GUI_GRID_W;
+			h = 1 * WOG_ARTY_GUI_GRID_H;
 			color[] = {1,1,1,1};
 			colorActive[] = {1,1,1,1};
 			onSliderPosChanged = "(player getVariable 'WOG_D30_gunObj') animateSource ['rightLiftT_source', _this select 1]";
@@ -243,10 +243,10 @@ class WOG_ARTY_LEVEL_D {
 		class WOG_Arty_RscSlider_1902: WOG_Arty_RscSlider
 		{
 			idc = 3902;
-			x = 15.5 * TU_ARTY_GUI_GRID_W + TU_ARTY_GUI_GRID_X;
-			y = 11 * TU_ARTY_GUI_GRID_H + TU_ARTY_GUI_GRID_Y;
-			w = 16 * TU_ARTY_GUI_GRID_W;
-			h = 1 * TU_ARTY_GUI_GRID_H;
+			x = 15.5 * WOG_ARTY_GUI_GRID_W + WOG_ARTY_GUI_GRID_X;
+			y = 11 * WOG_ARTY_GUI_GRID_H + WOG_ARTY_GUI_GRID_Y;
+			w = 16 * WOG_ARTY_GUI_GRID_W;
+			h = 1 * WOG_ARTY_GUI_GRID_H;
 			color[] = {1,1,1,1};
 			colorActive[] = {1,1,1,1};
 			onSliderPosChanged = "(player getVariable 'WOG_D30_gunObj') animateSource ['mainLiftT_source', _this select 1]";
@@ -258,10 +258,10 @@ class WOG_ARTY_LEVEL_D {
 		{
 			idc = 3601;
 			text = "Закрыть";
-			x = 25.5 * TU_ARTY_GUI_GRID_W + TU_ARTY_GUI_GRID_X;
-			y = 13 * TU_ARTY_GUI_GRID_H + TU_ARTY_GUI_GRID_Y;
-			w = 6 * TU_ARTY_GUI_GRID_W;
-			h = 2 * TU_ARTY_GUI_GRID_H;
+			x = 25.5 * WOG_ARTY_GUI_GRID_W + WOG_ARTY_GUI_GRID_X;
+			y = 13 * WOG_ARTY_GUI_GRID_H + WOG_ARTY_GUI_GRID_Y;
+			w = 6 * WOG_ARTY_GUI_GRID_W;
+			h = 2 * WOG_ARTY_GUI_GRID_H;
 			onMouseButtonClick = "closeDialog 2;";
 		};
 	};
