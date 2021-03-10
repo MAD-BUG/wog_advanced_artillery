@@ -32,10 +32,22 @@ if (_type == 1) then
 {
 	switch (_pos) do
 	{
-		case 1: {_box animate ["shell_1_hide", 0, true]};
-		case 2: {_box animate ["shell_2_hide", 0, true]};
+		case 1: {
+			switch (_magClass select 0) do
+			{
+				case "wog_mag_of462_dummy": {_box animate ["shell_1_hide", 0, true];};
+				case "wog_mag_3bk13_dummy": {_box animate ["shell_3bk13_1_hide", 0, true];};
+			};
+		};
+		case 2: {
+			switch (_magClass select 0) do
+			{
+				case "wog_mag_of462_dummy": {_box animate ["shell_2_hide", 0, true];};
+				case "wog_mag_3bk13_dummy": {_box animate ["shell_3bk13_2_hide", 0, true];};
+			};
+		};
 	};
-	if ((_box animationPhase "shell_1_hide" != 1) && (_box animationPhase "shell_2_hide" != 1)) then
+	if (((_box animationPhase "shell_1_hide" != 1) || (_box animationPhase "shell_3bk13_1_hide" != 1)) && ((_box animationPhase "shell_2_hide" != 1) || (_box animationPhase "shell_3bk13_2_hide" != 1))) then
 	{
 		_box animate ["covering_1_hide", 0, true];
 	};

@@ -25,7 +25,7 @@
 ["wog_advanced_artillery_remove_mags_local_event",
 {
 	params ["_vehicle"];
-	{_vehicle removeMagazinesTurret [_x,[0]];} forEach WOG_ADVANCED_ARTILLERY_OF462_ARRAY;
+	{_vehicle removeMagazinesTurret [_x,[0]];} forEach (WOG_ADVANCED_ARTILLERY_OF462_ARRAY + WOG_ADVANCED_ARTILLERY_3BK13_ARRAY);
 }
 ] call CBA_fnc_addEventHandler;
 

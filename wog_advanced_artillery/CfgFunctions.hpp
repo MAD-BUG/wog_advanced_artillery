@@ -107,6 +107,11 @@ class CfgFunctions
 				file = "wog_advanced_artillery\functions\fnc_rangeTableOpen.sqf";
 				recompile = 0;
 			};
+			class initAmmobox
+			{
+				file = "wog_advanced_artillery\functions\fnc_init_ammobox.sqf";
+				recompile = 0;
+			};
 		};
 	};
 };

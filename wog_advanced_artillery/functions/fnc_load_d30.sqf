@@ -17,7 +17,11 @@ switch (_type) do
 		if ((count _mags) == 0) exitWith {hint "You have not a shell!"};
 		_gun setVariable ["WOG_122_shell_loaded", _mags select 0, true];
 		player removeItem (_mags select 0);
-		_gun animateSource ['shell_loading', 1];
+		switch (_mags select 0) do
+		{
+			case "wog_mag_of462_dummy": {_gun animateSource ['shell_loading', 1];};
+			case "wog_mag_3bk13_dummy": {_gun animateSource ['shell_3bk13_loading', 1];};
+		};
 		player playAction "PutDown";
 	};
 
@@ -30,6 +34,7 @@ switch (_type) do
 			};
 		} forEach (magazines player);
 		if ((count _mags) == 0) exitWith {hint "You have not a casing!"};
+		if (((_gun getVariable ["WOG_122_shell_loaded", ""]) == "wog_mag_3bk13_dummy") && ((_mags select 0) != "wog_mag_D30_charge_full_dummy")) exitWith {hint "Можно зарядить только полный заряд для текущего снаряда!"}; 
 		_gun setVariable ["WOG_122_casing_loaded", _mags select 0, true];
 		player removeItem (_mags select 0);
 		player playAction "PutDown";
@@ -39,14 +44,22 @@ switch (_type) do
 		waitUntil {(_gun animationSourcePhase "casing_loading") == 1};
 		['wog_advanced_artillery_remove_mags_server_event', [_gun]] call CBA_fnc_serverEvent;
 		_index = WOG_ADVANCED_ARTILLERY_CHARGES_ARRAY find (_mags select 0);
-		["wog_advanced_artillery_load_server_event", [WOG_ADVANCED_ARTILLERY_OF462_ARRAY select _index, [0], 1, _gun]] call CBA_fnc_serverEvent;
+		switch (_gun getVariable ["WOG_122_shell_loaded", ""]) do
+		{
+			case "wog_mag_of462_dummy": {["wog_advanced_artillery_load_server_event", [WOG_ADVANCED_ARTILLERY_OF462_ARRAY select _index, [0], 1, _gun]] call CBA_fnc_serverEvent;};
+			case "wog_mag_3bk13_dummy": {["wog_advanced_artillery_load_server_event", [WOG_ADVANCED_ARTILLERY_3BK13_ARRAY select _index, [0], 1, _gun]] call CBA_fnc_serverEvent;};
+		};
 	};
 	
 	case 3:
 	{
 		if ((_gun getVariable ["WOG_122_shell_loaded", ""]) == "") exitWith {hint "Unload error!"};
 		if !(player canAddItemToBackpack [_gun getVariable "WOG_122_shell_loaded", 1]) exitWith {hint "Not enough space in backpack!"};
-		_gun animateSource ['shell_loading', 0];
+		switch (_gun getVariable ["WOG_122_shell_loaded", ""]) do
+		{
+			case "wog_mag_of462_dummy": {_gun animateSource ['shell_loading', 0];};
+			case "wog_mag_3bk13_dummy": {_gun animateSource ['shell_3bk13_loading', 0];};
+		};
 		player playAction "PutDown";
 		player addItemToBackpack (_gun getVariable "WOG_122_shell_loaded");
 		_gun setVariable ["WOG_122_shell_loaded", "", true];

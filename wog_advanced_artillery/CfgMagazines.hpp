@@ -28,7 +28,7 @@ class CfgMagazines
 	class wog_mag_of462_dummy: 32Rnd_155mm_Mo_shells
 	{
 		scope = 2;
-		displayName = "Снаряд ОФ-462";
+		displayName = "$STR_WOG_advanced_artillery_Shell_OF462_displayName";
         displayNameShort = "";
         descriptionShort = "Используется в 122мм гаубице Д-30";
 		picture = "\wog_advanced_artillery\resource\data\HE_122mm_icon";
@@ -41,10 +41,17 @@ class CfgMagazines
 		muzzleImpulseFactor = 0.1;
 		mass = 128;
 	};
+	class wog_mag_3bk13_dummy: wog_mag_of462_dummy
+	{
+		displayName = "$STR_WOG_advanced_artillery_Shell_3BK13_displayName";
+		picture = "\wog_advanced_artillery\resource\data\3bk13_icon";
+		model = "wog_advanced_artillery\ammobox_122\3bk13.p3d";
+		ammo = "rhs_ammo_bk13";
+	};
 	//Charges
 	class wog_mag_D30_charge_full_dummy: 32Rnd_155mm_Mo_shells
 	{
-		displayName = "Полный заряд Ж-9";
+		displayName = "$STR_WOG_advanced_artillery_ChargeFull_displayName";
         displayNameShort = "";
         descriptionShort = "Используется в 122мм гаубице Д-30";
 		picture = "\wog_advanced_artillery\resource\data\casing_122mm_icon";
@@ -54,23 +61,23 @@ class CfgMagazines
 	};
 	class wog_mag_D30_charge_reduced_dummy: wog_mag_D30_charge_full_dummy
 	{
-		displayName = "Уменьшенный переменный заряд Ж-10";
+		displayName = "$STR_WOG_advanced_artillery_ChargeReduced_displayName";
 	};
 	class wog_mag_D30_charge_1_dummy: wog_mag_D30_charge_full_dummy
 	{
-		displayName = "Первый заряд Ж-10";
+		displayName = "$STR_WOG_advanced_artillery_ChargeI_displayName";
 	};
 	class wog_mag_D30_charge_2_dummy: wog_mag_D30_charge_full_dummy
 	{
-		displayName = "Второй заряд Ж-10";
+		displayName = "$STR_WOG_advanced_artillery_ChargeII_displayName";
 	};
 	class wog_mag_D30_charge_3_dummy: wog_mag_D30_charge_full_dummy
 	{
-		displayName = "Третий заряд Ж-10";
+		displayName = "$STR_WOG_advanced_artillery_ChargeIII_displayName";
 	};
 	class wog_mag_D30_charge_4_dummy: wog_mag_D30_charge_full_dummy
 	{
-		displayName = "Четвертый заряд Ж-10";
+		displayName = "$STR_WOG_advanced_artillery_ChargeIV_displayName";
 	};
 	/*--------------------------------------------------------------------------------------*/
 	//D-30 mags
@@ -115,5 +122,13 @@ class CfgMagazines
 		scope = 2;
 		ammo = "wog_ammo_of462_charge_4";
 		initSpeed = 158; //2550m
+	};
+	///////////////////////////////////////////////////////////////////////////////
+	class wog_mag_3bk13_charge_full: wog_mag_3bk13_dummy
+	{
+		displayName = "Полный";
+		scope = 2;
+		ammo = "rhs_ammo_bk13";
+		initSpeed = 726; //726
 	};
 };
