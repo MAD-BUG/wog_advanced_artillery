@@ -62,6 +62,11 @@
 				<English>122mm HE ammo box</English>
 				<Russian>Ящик с 122-мм ОФ снарядами</Russian>
 			</Key>
+			<Key ID="STR_WOG_advanced_artillery_122mm_3bk13_Ammobox_displayName">
+				<Original>122mm 3BK13 ammo box</Original>
+				<English>122mm 3BK13 ammo box</English>
+				<Russian>Ящик с 122-мм 3БК13 снарядами</Russian>
+			</Key>
 			<Key ID="STR_WOG_advanced_artillery_Prep_charges_displayName">
 				<Original>Charge Settings</Original>
 				<English>Charge Settings</English>
@@ -131,6 +136,46 @@
 				<Original>Detaching...</Original>
 				<English>Detaching...</English>
 				<Russian>Выполнение отцепки...</Russian>
+			</Key>
+			<Key ID="STR_WOG_advanced_artillery_ChargeFull_displayName">
+				<Original>Charge Full Zh-9</Original>
+				<English>Charge Full Zh-9</English>
+				<Russian>Полный заряд Ж-9</Russian>
+			</Key>
+			<Key ID="STR_WOG_advanced_artillery_ChargeReduced_displayName">
+				<Original>Charge Reduced Zh-10</Original>
+				<English>Charge Reduced Zh-10</English>
+				<Russian>Уменьшенный переменный заряд Ж-10</Russian>
+			</Key>
+			<Key ID="STR_WOG_advanced_artillery_ChargeI_displayName">
+				<Original>Charge I Zh-10</Original>
+				<English>Charge I Zh-10</English>
+				<Russian>Первый заряд Ж-10</Russian>
+			</Key>
+			<Key ID="STR_WOG_advanced_artillery_ChargeII_displayName">
+				<Original>Charge II Zh-10</Original>
+				<English>Charge II Zh-10</English>
+				<Russian>Второй заряд Ж-10</Russian>
+			</Key>
+			<Key ID="STR_WOG_advanced_artillery_ChargeIII_displayName">
+				<Original>Charge III Zh-10</Original>
+				<English>Charge III Zh-10</English>
+				<Russian>Третий заряд Ж-10</Russian>
+			</Key>
+			<Key ID="STR_WOG_advanced_artillery_ChargeIV_displayName">
+				<Original>Charge IV Zh-10</Original>
+				<English>Charge IV Zh-10</English>
+				<Russian>Четвертый заряд Ж-10</Russian>
+			</Key>
+			<Key ID="STR_WOG_advanced_artillery_Shell_OF462_displayName">
+				<Original>Shell OF-462</Original>
+				<English>Shell OF-462</English>
+				<Russian>Снаряд ОФ-462</Russian>
+			</Key>
+			<Key ID="STR_WOG_advanced_artillery_Shell_3BK13_displayName">
+				<Original>Shell 3BK13</Original>
+				<English>Shell 3BK13</English>
+				<Russian>Снаряд 3БК13</Russian>
 			</Key>
 		</Container>
 	</Package>

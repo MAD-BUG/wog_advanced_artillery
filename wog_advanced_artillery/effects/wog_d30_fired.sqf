@@ -35,6 +35,7 @@ private _vector = (_ejectWorldPos vectorFromTo _ejectWorldDir) vectorMultiply (3
 sleep 1.5;
 _v animateSource ["klin_open_source", 1, true];
 _v animateSource ["shell_loading", 0, true];
+_v animateSource ["shell_3bk13_loading", 0, true];
 _v animateSource ["casing_loading", 0, true];
 sleep 0.3;
 private _particle = "wog_casing_122mm_used" createVehicle _ejectWorldPos;

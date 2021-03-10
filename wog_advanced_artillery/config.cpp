@@ -107,7 +107,8 @@ class CfgWeapons
 			"wog_mag_of462_charge_1",
 			"wog_mag_of462_charge_2",
 			"wog_mag_of462_charge_3",
-			"wog_mag_of462_charge_4"
+			"wog_mag_of462_charge_4",
+			"wog_mag_3bk13_charge_full"
 		};
 	};
 	
@@ -195,6 +196,8 @@ class CfgVehicles
 			};
 			
 			class shell_2_hide: shell_1_hide {};
+			class shell_3bk13_1_hide: shell_1_hide {};
+			class shell_3bk13_2_hide: shell_1_hide {};
 			class charge_1_hide: shell_1_hide {};
 			class charge_2_hide: shell_1_hide {};
 			class covering_1_hide: shell_1_hide {};
@@ -235,7 +238,7 @@ class CfgVehicles
 				selection="action_point_shell_take_1";
 				distance=1.5;
 				displayName="$STR_lex_arty_Take";
-				condition="((_target animationSourcePhase 'lid_rotation') == 1) && ((_target animationPhase 'shell_1_hide') == 0)";
+				condition="((_target animationSourcePhase 'lid_rotation') == 1) && (((_target animationPhase 'shell_1_hide') == 0) || ((_target animationPhase 'shell_3bk13_1_hide') == 0))";
 				statement="[_target, 1, 1] call wog_fnc_take_122_shell";
 				showDisabled=0;
 				exceptions[]={};
@@ -245,7 +248,7 @@ class CfgVehicles
 			class WOG_D30_Take_Shell_2_Action: WOG_D30_Take_Shell_1_Action
 			{
 				selection="action_point_shell_take_2";
-				condition="((_target animationSourcePhase 'lid_rotation') == 1) && ((_target animationPhase 'shell_2_hide') == 0)";
+				condition="((_target animationSourcePhase 'lid_rotation') == 1) && (((_target animationPhase 'shell_2_hide') == 0) || ((_target animationPhase 'shell_3bk13_2_hide') == 0))";
 				statement="[_target, 1, 2] call wog_fnc_take_122_shell";
 			};
 			class WOG_D30_Take_Casing_1_Action: WOG_D30_Take_Shell_1_Action
@@ -265,14 +268,14 @@ class CfgVehicles
 			{
 				selection="action_point_shell_take_1";
 				displayName="$STR_lex_arty_Put";
-				condition="((_target animationSourcePhase 'lid_rotation') == 1) && ((_target animationPhase 'shell_1_hide') == 1)";
+				condition="((_target animationSourcePhase 'lid_rotation') == 1) && ((_target animationPhase 'shell_1_hide') == 1) && ((_target animationPhase 'shell_3bk13_1_hide') == 1)";
 				statement="[_target, 1, 1] call wog_fnc_put_122_shell";
 				icon="wog_advanced_artillery\resource\data\icon_unload_interact.paa";
 			};
 			class WOG_D30_Put_Shell_2_Action: WOG_D30_Put_Shell_1_Action
 			{
 				selection="action_point_shell_take_2";
-				condition="((_target animationSourcePhase 'lid_rotation') == 1) && ((_target animationPhase 'shell_2_hide') == 1)";
+				condition="((_target animationSourcePhase 'lid_rotation') == 1) && ((_target animationPhase 'shell_2_hide') == 1) && ((_target animationPhase 'shell_3bk13_2_hide') == 1)";
 				statement="[_target, 1, 2] call wog_fnc_put_122_shell";
 			};
 			class WOG_D30_Put_Casing_1_Action: WOG_D30_Put_Shell_1_Action
@@ -293,7 +296,20 @@ class CfgVehicles
 		{
 			class WOG_EventHandlers
 			{
-				init = "if !(local (_this select 0)) exitWith {}; (_this select 0) setVariable ['WOG_122_boxParams', ['wog_mag_of462_dummy', 'wog_mag_of462_dummy', 'wog_mag_D30_charge_4_dummy', 'wog_mag_D30_charge_4_dummy'], true];";
+				init = "[_this, 1] spawn wog_fnc_initAmmobox";
+			};
+		};
+	};
+	
+	class wog_122_3bk13_ammobox: wog_122_ammobox
+	{
+		displayName="$STR_WOG_advanced_artillery_122mm_3bk13_Ammobox_displayName";
+		
+		class EventHandlers: EventHandlers
+		{
+			class WOG_EventHandlers: WOG_EventHandlers
+			{
+				init = "[_this, 2] spawn wog_fnc_initAmmobox";
 			};
 		};
 	};
@@ -390,6 +406,7 @@ class CfgVehicles
 				initPhase = 0;
 				animPeriod = 0.7;
 			};
+			class shell_3bk13_loading: shell_loading {};
 			class casing_loading: shell_loading
 			{
 				animPeriod = 0.55;
@@ -532,7 +549,7 @@ class CfgVehicles
 					selection="action_point_loading";
 					distance=1.5;
 					displayName="$STR_WOG_advanced_artillery_Load_Shell_displayName";
-					condition="((_target animationSourcePhase 'klin_open_source') == 1) && ((_target animationSourcePhase 'shell_loading') == 0)";
+					condition="((_target animationSourcePhase 'klin_open_source') == 1) && ((_target animationSourcePhase 'shell_loading') == 0) && ((_target animationSourcePhase 'shell_3bk13_loading') == 0)";
 					statement="[_target, 1] spawn wog_fnc_load_d30";
 					showDisabled=0;
 					exceptions[]={};
@@ -544,7 +561,7 @@ class CfgVehicles
 					selection="action_point_loading";
 					distance=1.5;
 					displayName="$STR_WOG_advanced_artillery_Unload_Shell_displayName";
-					condition="((_target animationSourcePhase 'klin_open_source') == 1) && ((_target animationSourcePhase 'shell_loading') == 1) && ((_target animationSourcePhase 'casing_loading') == 0)";
+					condition="((_target animationSourcePhase 'klin_open_source') == 1) && (((_target animationSourcePhase 'shell_loading') == 1) || ((_target animationSourcePhase 'shell_3bk13_loading') == 1)) && ((_target animationSourcePhase 'casing_loading') == 0)";
 					statement="[_target, 3] spawn wog_fnc_load_d30";
 					showDisabled=0;
 					exceptions[]={};
@@ -556,7 +573,7 @@ class CfgVehicles
 					selection="action_point_loading";
 					distance=1.5;
 					displayName="$STR_WOG_advanced_artillery_Load_Casing_displayName";
-					condition="((_target animationSourcePhase 'klin_open_source') == 1) && ((_target animationSourcePhase 'casing_loading') == 0) && ((_target animationSourcePhase 'shell_loading') == 1)";
+					condition="((_target animationSourcePhase 'klin_open_source') == 1) && ((_target animationSourcePhase 'casing_loading') == 0) && (((_target animationSourcePhase 'shell_loading') == 1) || ((_target animationSourcePhase 'shell_3bk13_loading') == 1))";
 					statement="[_target, 2] spawn wog_fnc_load_d30";
 					showDisabled=0;
 					exceptions[]={};
@@ -568,7 +585,7 @@ class CfgVehicles
 					selection="action_point_loading";
 					distance=1.5;
 					displayName="$STR_WOG_advanced_artillery_Unload_Casing_displayName";
-					condition="((_target animationSourcePhase 'klin_open_source') == 1) && ((_target animationSourcePhase 'casing_loading') == 1) && ((_target animationSourcePhase 'shell_loading') == 1)";
+					condition="((_target animationSourcePhase 'klin_open_source') == 1) && ((_target animationSourcePhase 'casing_loading') == 1) && (((_target animationSourcePhase 'shell_loading') == 1) || ((_target animationSourcePhase 'shell_3bk13_loading') == 1))";
 					statement="[_target, 4] spawn wog_fnc_load_d30";
 					showDisabled=0;
 					exceptions[]={};
@@ -715,6 +732,44 @@ class CfgVehicles
 		scopeCurator=2;
 		crew="rhsgref_ins_g_rifleman";
 	};
+	
+	class rhs_D30_AT_base;
+	class rhs_D30_at_ins: rhs_D30_AT_base
+	{
+		scope = 0;
+	};
+	class rhs_D30_at_msv: rhs_D30_AT_base
+	{
+		scope = 0;
+	};
+	class rhs_D30_at_vdv: rhs_D30_AT_base
+	{
+		scope = 0;
+	};
+	class rhs_D30_at_vmf: rhs_D30_AT_base
+	{
+		scope = 0;
+	};
+	class rhsgref_cdf_reg_d30_at: rhs_D30_AT_base
+	{
+		scope = 0;
+	};
+	class rhsgref_cdf_b_reg_d30_at: rhsgref_cdf_reg_d30_at
+	{
+		scope = 0;
+	};
+	class rhsgref_nat_d30_at: rhs_D30_AT_base
+	{
+		scope = 0;
+	};
+	class rhsgref_ins_d30_at: rhs_D30_AT_base
+	{
+		scope = 0;
+	};
+	class rhsgref_ins_g_d30_at: rhsgref_ins_d30_at
+	{
+		scope = 0;
+	};	
 	
 	class rhs_casing_122mm;
 	class wog_casing_122mm_used: rhs_casing_122mm
