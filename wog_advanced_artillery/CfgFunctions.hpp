@@ -62,6 +62,11 @@ class CfgFunctions
 				file = "wog_advanced_artillery\functions\fnc_keydown_EH.sqf";
 				recompile = 0;
 			};
+			class PAB_2M_keydown_EH
+			{
+				file = "wog_advanced_artillery\functions\pab_2m\fnc_keydown_EH.sqf";
+				recompile = 0;
+			};
 			class D30_traverse
 			{
 				file = "wog_advanced_artillery\functions\fnc_gun_traverse.sqf";
@@ -110,6 +115,31 @@ class CfgFunctions
 			class initAmmobox
 			{
 				file = "wog_advanced_artillery\functions\fnc_init_ammobox.sqf";
+				recompile = 0;
+			};
+			class PAB_2M_base_traverse
+			{
+				file = "wog_advanced_artillery\functions\pab_2m\fnc_pab_2m_base_traverse.sqf";
+				recompile = 0;
+			};
+			class PAB_2M_uglomer_rotation
+			{
+				file = "wog_advanced_artillery\functions\pab_2m\fnc_pab_2m_uglomer_rotation.sqf";
+				recompile = 0;
+			};
+			class PAB_2M_place
+			{
+				file = "wog_advanced_artillery\functions\pab_2m\fnc_pab_2m_place.sqf";
+				recompile = 0;
+			};
+			class PAB_2M_leveling
+			{
+				file = "wog_advanced_artillery\functions\pab_2m\fnc_pab_2m_leveling.sqf";
+				recompile = 0;
+			};
+			class PAB_2M_pickup
+			{
+				file = "wog_advanced_artillery\functions\pab_2m\fnc_pab_2m_pickup.sqf";
 				recompile = 0;
 			};
 		};

@@ -14,7 +14,7 @@ switch (_type) do
 				_mags pushBack _x;
 			};
 		} forEach (magazines player);
-		if ((count _mags) == 0) exitWith {hint "You have not a shell!"};
+		if ((count _mags) == 0) exitWith {hint "You don't have a shell!"};
 		_gun setVariable ["WOG_122_shell_loaded", _mags select 0, true];
 		player removeItem (_mags select 0);
 		switch (_mags select 0) do
@@ -33,7 +33,7 @@ switch (_type) do
 				_mags pushBack _x;
 			};
 		} forEach (magazines player);
-		if ((count _mags) == 0) exitWith {hint "You have not a casing!"};
+		if ((count _mags) == 0) exitWith {hint "You don't have a casing!"};
 		if (((_gun getVariable ["WOG_122_shell_loaded", ""]) == "wog_mag_3bk13_dummy") && ((_mags select 0) != "wog_mag_D30_charge_full_dummy")) exitWith {hint "Можно зарядить только полный заряд для текущего снаряда!"}; 
 		_gun setVariable ["WOG_122_casing_loaded", _mags select 0, true];
 		player removeItem (_mags select 0);

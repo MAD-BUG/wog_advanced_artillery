@@ -10,7 +10,8 @@ sliderSetPosition [3901, _gun animationSourcePhase "rightLiftT_source"];
 sliderSetPosition [3902, _gun animationSourcePhase "mainLiftT_source"];
 [_gun] spawn {
 	while {dialog} do {
-		[_this select 0] call ace_common_fnc_fixFloating;
+		["ace_common_fnc_fixFloating", _this select 0, _this select 0] call CBA_fnc_targetEvent;
+		//[_this select 0] call ace_common_fnc_fixFloating;
 		sleep 1;
 	};
 };
