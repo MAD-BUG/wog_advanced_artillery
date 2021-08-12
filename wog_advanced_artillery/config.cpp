@@ -4,7 +4,7 @@ class CfgPatches {
         units[] = {};
         weapons[] = {"WOG_RangeTable_D30"};
         requiredVersion = 1.60;
-        requiredAddons[] = {"a3_weapons_f", "ace_interaction", "rhs_c_heavyweapons", "A3_Static_F_Mortar_01", "ruPal_RHS_to_ACE", "rhsgref_c_vehicles_ret", "ace_spottingscope"};
+        requiredAddons[] = {"a3_weapons_f", "ace_interaction", "rhs_c_heavyweapons", "A3_Static_F_Mortar_01", "ruPal_RHS_to_ACE", "rhsgref_c_vehicles_ret", "ace_spottingscope", "rhs_main"};
         author = "Lex";
     };
 };
@@ -909,6 +909,7 @@ class CfgVehicles
 				showDisabled=0;
 				exceptions[]={};
 				priority=5;
+				icon = "\rhsafrf\addons\rhs_main\data\actions\rhs_tow_attach_ca.paa";
 			};
 			class WOG_D30_Towing_Detach_Action
 			{
@@ -920,6 +921,7 @@ class CfgVehicles
 				showDisabled=0;
 				exceptions[]={};
 				priority=5;
+				icon = "\rhsafrf\addons\rhs_main\data\actions\rhs_tow_detach_ca.paa";
 			};
 		};
 		
