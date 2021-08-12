@@ -212,6 +212,11 @@
 				<Russian>Снаряд 3БК13</Russian>
 				<Czech>Granát OF-462 (kumulativní) pro D-30</Czech>
 			</Key>
+			<Key ID="STR_WOG_advanced_artillery_Fix_Floating_displayName">
+				<Original>Fix Floating</Original>
+				<English>Fix Floating</English>
+				<Russian>Исправить висение</Russian>
+			</Key>
 		</Container>
 	</Package>
 	<Package name="PAB-2M">
