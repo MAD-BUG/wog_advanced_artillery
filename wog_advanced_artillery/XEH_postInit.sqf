@@ -57,3 +57,9 @@
 	};
 }
 ] call CBA_fnc_addEventHandler;
+
+["wog_advanced_artillery_changeLocality",
+{
+	_this call WOG_fnc_changeLocality;
+}
+] call CBA_fnc_addEventHandler;

@@ -142,6 +142,11 @@ class CfgFunctions
 				file = "wog_advanced_artillery\functions\pab_2m\fnc_pab_2m_pickup.sqf";
 				recompile = 0;
 			};
+			class changeLocality
+			{
+				file = "wog_advanced_artillery\functions\fnc_changeLocality.sqf";
+				recompile = 0;
+			};
 		};
 	};
 };

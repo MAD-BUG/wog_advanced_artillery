@@ -19,8 +19,16 @@ if (typeOf (_this select 0) == "wog_pab_2m") then
 		};
 	}, 0.1, [_this select 0]] call CBA_fnc_addPerFrameHandler;
 	player setVariable ["wog_advanced_artillery_gunner_handleCompass", _handleCompass];
+	if !(local (_this select 0)) then
+	{
+		["wog_advanced_artillery_changeLocality", [_this select 0, player]] call CBA_fnc_serverEvent;
+	};
 } else
 {
-_handle = (findDisplay 46) displayAddEventHandler ["KeyDown", {(_this + [vehicle player]) call wog_fnc_D30_keydown_EH}];
+	_handle = (findDisplay 46) displayAddEventHandler ["KeyDown", {(_this + [vehicle player]) call wog_fnc_D30_keydown_EH}];
+	if !(local (_this select 0)) then
+	{
+		["wog_advanced_artillery_changeLocality", [_this select 0, player]] call CBA_fnc_serverEvent;
+	};
 };
 player setVariable ["wog_advanced_artillery_gunner_handle", _handle];
