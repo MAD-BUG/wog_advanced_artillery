@@ -46,5 +46,5 @@ wog_advanced_artillery_start_prep = {
 		if !((_args select 0) in (magazines player)) exitWith {hint "Отсутствует заряд в инвентаре!";};
 		player removeItem (_args select 0);
 		player addItemToBackpack (_args select 1);
-	}, {}, "Подготовка заряда..."] call ace_common_fnc_progressBar;
+	}, {}, (localize "STR_WOG_advanced_artillery_Prep_charges_displayName") + "..."] call ace_common_fnc_progressBar;
 };
