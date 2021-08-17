@@ -83,42 +83,48 @@ class CfgMagazines
 	//D-30 mags
 	class wog_mag_of462_charge_full: wog_mag_of462_dummy
 	{
-		displayName = "Полный";
+		displayNameShort = "$STR_WOG_advanced_artillery_charge_full";
+		displayName = "ОФ-462Ж (Полный)";
 		scope = 2;
 		ammo = "wog_ammo_of462_charge_full";
 		initSpeed = 387; //15300m
 	};
 	class wog_mag_of462_charge_reduced: wog_mag_of462_dummy
 	{
-		displayName = "Уменьшенный";
+		displayNameShort = "$STR_WOG_advanced_artillery_charge_reduced";
+		displayName = "ОФ-462Ж (Уменьшенный)";
 		scope = 2;
 		ammo = "wog_ammo_of462_charge_reduced";
 		initSpeed = 353; //12750m
 	};
 	class wog_mag_of462_charge_1: wog_mag_of462_dummy
 	{
-		displayName = "Первый";
+		displayNameShort = "$STR_WOG_advanced_artillery_charge_one";
+		displayName = "ОФ-462Ж (Первый)";
 		scope = 2;
 		ammo = "wog_ammo_of462_charge_1";
 		initSpeed = 316; //10200m
 	};
 	class wog_mag_of462_charge_2: wog_mag_of462_dummy
 	{
-		displayName = "Второй";
+		displayNameShort = "$STR_WOG_advanced_artillery_charge_two";
+		displayName = "ОФ-462Ж (Второй)";
 		scope = 2;
 		ammo = "wog_ammo_of462_charge_2";
 		initSpeed = 274; //7650m
 	};
 	class wog_mag_of462_charge_3: wog_mag_of462_dummy
 	{
-		displayName = "Третий";
+		displayNameShort = "$STR_WOG_advanced_artillery_charge_three";
+		displayName = "ОФ-462Ж (Третий)";
 		scope = 2;
 		ammo = "wog_ammo_of462_charge_3";
 		initSpeed = 224; //5100m
 	};
 	class wog_mag_of462_charge_4: wog_mag_of462_dummy
 	{
-		displayName = "Четвертый";
+		displayNameShort = "$STR_WOG_advanced_artillery_charge_four";
+		displayName = "ОФ-462Ж (Четвертый)";
 		scope = 2;
 		ammo = "wog_ammo_of462_charge_4";
 		initSpeed = 158; //2550m
@@ -126,7 +132,8 @@ class CfgMagazines
 	///////////////////////////////////////////////////////////////////////////////
 	class wog_mag_3bk13_charge_full: wog_mag_3bk13_dummy
 	{
-		displayName = "Полный";
+		displayNameShort = "$STR_WOG_advanced_artillery_charge_full";
+		displayName = "3БК13 (Полный)";
 		scope = 2;
 		ammo = "rhs_ammo_bk13";
 		initSpeed = 726; //726

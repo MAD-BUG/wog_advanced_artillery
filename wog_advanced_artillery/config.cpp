@@ -69,7 +69,11 @@ class WOG_D30_Fired
 
 class CfgWeapons
 {
-	class mortar_155mm_AMOS;
+	class CannonCore;
+	class mortar_155mm_AMOS: CannonCore
+	{
+		class Single1;
+	};
 	class wog_weap_D30: mortar_155mm_AMOS
 	{
 		displayName = "$STR_WOG_advanced_artillery_D30_displayName";
@@ -100,6 +104,11 @@ class CfgWeapons
 		};
 
 		modes[] = {"Single5"};
+		
+		class Single5: Single1
+		{
+			displayName = "";
+		};
 
 		magazines[] =
 		{

@@ -219,6 +219,40 @@
 			</Key>
 		</Container>
 	</Package>
+	<Package name="D30_mags">
+		<Container name="Names">
+			<Key ID="STR_WOG_advanced_artillery_charge_full">
+				<Original>Full</Original>
+				<English>Full</English>
+				<Russian>Полный</Russian>
+			</Key>
+			<Key ID="STR_WOG_advanced_artillery_charge_reduced">
+				<Original>Reduced</Original>
+				<English>Reduced</English>
+				<Russian>Уменьшенный</Russian>
+			</Key>
+			<Key ID="STR_WOG_advanced_artillery_charge_one">
+				<Original>Charge 1</Original>
+				<English>Charge 1</English>
+				<Russian>Первый</Russian>
+			</Key>
+			<Key ID="STR_WOG_advanced_artillery_charge_two">
+				<Original>Charge 2</Original>
+				<English>Charge 2</English>
+				<Russian>Второй</Russian>
+			</Key>
+			<Key ID="STR_WOG_advanced_artillery_charge_three">
+				<Original>Charge 3</Original>
+				<English>Charge 3</English>
+				<Russian>Третий</Russian>
+			</Key>
+			<Key ID="STR_WOG_advanced_artillery_charge_four">
+				<Original>Charge 4</Original>
+				<English>Charge 4</English>
+				<Russian>Четвертый</Russian>
+			</Key>
+		</Container>
+	</Package>
 	<Package name="PAB-2M">
 		<Container name="Names">
 			<Key ID="STR_WOG_advanced_artillery_pab_2m_assemble">
