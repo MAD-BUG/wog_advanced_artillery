@@ -18,11 +18,12 @@
 #define RANGE_TABLE       ((uiNamespace getVariable "WOG_D30_RangeTable_Dialog") displayCtrl 20001)
 #define LIST_CHARGE       ((uiNamespace getVariable "WOG_D30_RangeTable_Dialog") displayCtrl 1501)
 
-private ["_listBoxData", "_muzzleVelocity", "_airFriction", "_precalcArray", "_minDist", "_maxDist", "_maxHigh", "_center"];
+private ["_listBoxData", "_muzzleVelocity", "_airFriction", "_precalcArray", "_minDist", "_maxDist", "_maxHigh", "_center", "_onlyLow"];
 
 _listBoxData = LIST_CHARGE lbData (lbCurSel LIST_CHARGE);
 if (isNil "_listBoxData" || {_listBoxData == ""}) exitWith {hint "lbCurSel out of bounds or no data";};
 _muzzleVelocity = parseNumber _listBoxData;
+_onlyLow = false;
 
 switch (_muzzleVelocity) do
 {
@@ -32,6 +33,7 @@ switch (_muzzleVelocity) do
 	case 274: {_minDist = 1350; _maxDist = 7650; _maxHigh = 4950;};
 	case 224: {_minDist = 900; _maxDist = 5100; _maxHigh = 3300;};
 	case 158: {_minDist = 450; _maxDist = 2500; _maxHigh = 1650;};
+	case 726: {_minDist = 100; _maxDist = 3000; _maxHigh = 3500; _onlyLow = true;};
 };
 _precalcArray = [];
 while {_minDist <= _maxDist} do
@@ -48,14 +50,18 @@ while {_minDist <= _maxDist} do
 	_minDist = _minDist + 50;
 };
 //max distance
-_precalcArray pushBack [
-	str (floor(_muzzleVelocity * _muzzleVelocity / 9.81)),
-	str (floor(45*6000/360)),
-	str (floor (abs((45 - atan((_muzzleVelocity^2-sqrt(_muzzleVelocity^4-9.81*((9.81*(_muzzleVelocity * _muzzleVelocity / 9.81)^2)+(2*(-100)*_muzzleVelocity^2))))/(9.81*(_muzzleVelocity * _muzzleVelocity / 9.81))))*6000/360))),
-	"--",
-	(2*_muzzleVelocity*(sin 45)/9.81) toFixed 1,
-	"--", "--", "--", "--", "--", "--", "--"
-];
+if !(_onlyLow) then
+{
+	_precalcArray pushBack [
+		str (floor(_muzzleVelocity * _muzzleVelocity / 9.81)),
+		str (floor(45*6000/360)),
+		str (floor (abs((45 - atan((_muzzleVelocity^2-sqrt(_muzzleVelocity^4-9.81*((9.81*(_muzzleVelocity * _muzzleVelocity / 9.81)^2)+(2*(-100)*_muzzleVelocity^2))))/(9.81*(_muzzleVelocity * _muzzleVelocity / 9.81))))*6000/360))),
+		"--",
+		(2*_muzzleVelocity*(sin 45)/9.81) toFixed 1,
+		"--", "--", "--", "--", "--", "--", "--"
+	];
+};
+_precalcArray pushBack ["###", "###", "###", "###", "###", "###", "###", "###", "###", "###", "###", "###"];
 _center = (count _precalcArray) - 1;
 
 while {_maxDist >= _maxHigh} do
@@ -81,7 +87,8 @@ lnbClear RANGE_TABLE;
 
 //put dummy line at end because scrolling is fucked and can't see last line
 RANGE_TABLE lnbAddRow ["", "", "", "", "", "", "", "", "", "", "", ""];
+
 for "_i" from 0 to 11 do
 {
-	RANGE_TABLE lnbSetPictureColor [[_center,_i], [0,0,0,0.2]];
+	RANGE_TABLE lnbSetColor   [[_center,_i], [0,0.75,0,1]];
 };

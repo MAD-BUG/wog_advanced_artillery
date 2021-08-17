@@ -251,6 +251,41 @@
 				<English>Charge 4</English>
 				<Russian>Четвертый</Russian>
 			</Key>
+			<Key ID="STR_WOG_advanced_artillery_of462_full">
+				<Original>OF-462ZH (Full)</Original>
+				<English>OF-462ZH (Full)</English>
+				<Russian>ОФ-462Ж (Полный)</Russian>
+			</Key>
+			<Key ID="STR_WOG_advanced_artillery_of462_reduced">
+				<Original>OF-462ZH (Reduced)</Original>
+				<English>OF-462ZH (Reduced)</English>
+				<Russian>ОФ-462Ж (Уменьшенный)</Russian>
+			</Key>
+			<Key ID="STR_WOG_advanced_artillery_of462_one">
+				<Original>OF-462ZH (Charge 1)</Original>
+				<English>OF-462ZH (Charge 1)</English>
+				<Russian>ОФ-462Ж (Первый)</Russian>
+			</Key>
+			<Key ID="STR_WOG_advanced_artillery_of462_two">
+				<Original>OF-462ZH (Charge 2)</Original>
+				<English>OF-462ZH (Charge 2)</English>
+				<Russian>ОФ-462Ж (Второй)</Russian>
+			</Key>
+			<Key ID="STR_WOG_advanced_artillery_of462_three">
+				<Original>OF-462ZH (Charge 3)</Original>
+				<English>OF-462ZH (Charge 3)</English>
+				<Russian>ОФ-462Ж (Третий)</Russian>
+			</Key>
+			<Key ID="STR_WOG_advanced_artillery_of462_four">
+				<Original>OF-462ZH (Charge 4)</Original>
+				<English>OF-462ZH (Charge 4)</English>
+				<Russian>ОФ-462Ж (Четвертый)</Russian>
+			</Key>
+			<Key ID="STR_WOG_advanced_artillery_3bk13_full">
+				<Original>3BK13 (Full)</Original>
+				<English>3BK13 (Full)</English>
+				<Russian>3БК13 (Полный)</Russian>
+			</Key>
 		</Container>
 	</Package>
 	<Package name="PAB-2M">

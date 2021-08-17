@@ -84,7 +84,7 @@ class CfgMagazines
 	class wog_mag_of462_charge_full: wog_mag_of462_dummy
 	{
 		displayNameShort = "$STR_WOG_advanced_artillery_charge_full";
-		displayName = "ОФ-462Ж (Полный)";
+		displayName = "$STR_WOG_advanced_artillery_of462_full";
 		scope = 2;
 		ammo = "wog_ammo_of462_charge_full";
 		initSpeed = 387; //15300m
@@ -92,7 +92,7 @@ class CfgMagazines
 	class wog_mag_of462_charge_reduced: wog_mag_of462_dummy
 	{
 		displayNameShort = "$STR_WOG_advanced_artillery_charge_reduced";
-		displayName = "ОФ-462Ж (Уменьшенный)";
+		displayName = "$STR_WOG_advanced_artillery_of462_reduced";
 		scope = 2;
 		ammo = "wog_ammo_of462_charge_reduced";
 		initSpeed = 353; //12750m
@@ -100,7 +100,7 @@ class CfgMagazines
 	class wog_mag_of462_charge_1: wog_mag_of462_dummy
 	{
 		displayNameShort = "$STR_WOG_advanced_artillery_charge_one";
-		displayName = "ОФ-462Ж (Первый)";
+		displayName = "$STR_WOG_advanced_artillery_of462_one";
 		scope = 2;
 		ammo = "wog_ammo_of462_charge_1";
 		initSpeed = 316; //10200m
@@ -108,7 +108,7 @@ class CfgMagazines
 	class wog_mag_of462_charge_2: wog_mag_of462_dummy
 	{
 		displayNameShort = "$STR_WOG_advanced_artillery_charge_two";
-		displayName = "ОФ-462Ж (Второй)";
+		displayName = "$STR_WOG_advanced_artillery_of462_two";
 		scope = 2;
 		ammo = "wog_ammo_of462_charge_2";
 		initSpeed = 274; //7650m
@@ -116,7 +116,7 @@ class CfgMagazines
 	class wog_mag_of462_charge_3: wog_mag_of462_dummy
 	{
 		displayNameShort = "$STR_WOG_advanced_artillery_charge_three";
-		displayName = "ОФ-462Ж (Третий)";
+		displayName = "$STR_WOG_advanced_artillery_of462_three";
 		scope = 2;
 		ammo = "wog_ammo_of462_charge_3";
 		initSpeed = 224; //5100m
@@ -124,7 +124,7 @@ class CfgMagazines
 	class wog_mag_of462_charge_4: wog_mag_of462_dummy
 	{
 		displayNameShort = "$STR_WOG_advanced_artillery_charge_four";
-		displayName = "ОФ-462Ж (Четвертый)";
+		displayName = "$STR_WOG_advanced_artillery_of462_four";
 		scope = 2;
 		ammo = "wog_ammo_of462_charge_4";
 		initSpeed = 158; //2550m
@@ -133,7 +133,7 @@ class CfgMagazines
 	class wog_mag_3bk13_charge_full: wog_mag_3bk13_dummy
 	{
 		displayNameShort = "$STR_WOG_advanced_artillery_charge_full";
-		displayName = "3БК13 (Полный)";
+		displayName = "$STR_WOG_advanced_artillery_3bk13_full";
 		scope = 2;
 		ammo = "rhs_ammo_bk13";
 		initSpeed = 726; //726
