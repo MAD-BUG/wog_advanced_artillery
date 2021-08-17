@@ -810,7 +810,7 @@ class CfgVehicles
 				{
 					distance=5;
 					displayName="$STR_WOG_advanced_artillery_Leveling_displayName";
-					condition="(_target animationPhase 'leftT') == 0";
+					condition="(alive _target) && (_target animationPhase 'leftT') == 0";
 					statement="_player setVariable ['WOG_D30_gunObj', _target]; createDialog 'WOG_ARTY_LEVEL_D';";
 					showDisabled=0;
 					exceptions[]={};
@@ -822,8 +822,8 @@ class CfgVehicles
 				selection="action_point_handle";
 				distance=1.5;
 				displayName="$STR_WOG_advanced_artillery_Open_Breech_displayName";
-				condition="(_target animationSourcePhase 'klin_open_source') == 0";
-				statement=QUOTE(['wog_advanced_artillery_remove_mags_server_event', [_target]] call CBA_fnc_serverEvent; if ((_target animationSourcePhase 'handle_klin_open') == 0) then {_target animateSource ['handle_klin_open', 1];} else {_target animateSource ['handle_klin_open', 0];}; [{_this animateSource ['klin_open_source', 1, 0.25]}, _target, 0.6] call CBA_fnc_waitAndExecute;);
+				condition="(alive _target) && (_target animationSourcePhase 'klin_open_source') == 0";
+				statement="['wog_advanced_artillery_remove_mags_server_event', [_target]] call CBA_fnc_serverEvent; if ((_target animationSourcePhase 'handle_klin_open') == 0) then {_target animateSource ['handle_klin_open', 1];} else {_target animateSource ['handle_klin_open', 0];}; [{_this animateSource ['klin_open_source', 1, 0.25]}, _target, 0.6] call CBA_fnc_waitAndExecute;";
 				showDisabled=0;
 				exceptions[]={};
 				priority=5;
@@ -833,7 +833,7 @@ class CfgVehicles
 				selection="action_point_handle";
 				distance=1.5;
 				displayName="$STR_WOG_advanced_artillery_Close_Breech_displayName";
-				condition="(_target animationSourcePhase 'klin_open_source') == 1";
+				condition="(alive _target) && (_target animationSourcePhase 'klin_open_source') == 1";
 				statement="if ((_target animationSourcePhase 'handle_klin_open') == 0) then {_target animateSource ['handle_klin_open', 1];} else {_target animateSource ['handle_klin_open', 0];}; [{_this animateSource ['klin_open_source', 0, 0.25]}, _target, 0.6] call CBA_fnc_waitAndExecute;";
 				showDisabled=0;
 				exceptions[]={};
@@ -842,7 +842,7 @@ class CfgVehicles
 			class WOG_D30_Load_Actions_Group
 			{
 				selection="action_point_loading";
-				condition="(_target animationSourcePhase 'klin_open_source') == 1";
+				condition="(alive _target) && (_target animationSourcePhase 'klin_open_source') == 1";
 				displayName = "";
                 statement = "";
                 exceptions[] = {"isNotSwimming", "isNotInside"};
@@ -855,7 +855,7 @@ class CfgVehicles
 					selection="action_point_loading";
 					distance=1.5;
 					displayName="$STR_WOG_advanced_artillery_Load_Shell_displayName";
-					condition="((_target animationSourcePhase 'klin_open_source') == 1) && ((_target animationSourcePhase 'shell_loading') == 0) && ((_target animationSourcePhase 'shell_3bk13_loading') == 0)";
+					condition="(alive _target) && ((_target animationSourcePhase 'klin_open_source') == 1) && ((_target animationSourcePhase 'shell_loading') == 0) && ((_target animationSourcePhase 'shell_3bk13_loading') == 0)";
 					statement="[_target, 1] spawn wog_fnc_load_d30";
 					showDisabled=0;
 					exceptions[]={};
@@ -867,7 +867,7 @@ class CfgVehicles
 					selection="action_point_loading";
 					distance=1.5;
 					displayName="$STR_WOG_advanced_artillery_Unload_Shell_displayName";
-					condition="((_target animationSourcePhase 'klin_open_source') == 1) && (((_target animationSourcePhase 'shell_loading') == 1) || ((_target animationSourcePhase 'shell_3bk13_loading') == 1)) && ((_target animationSourcePhase 'casing_loading') == 0)";
+					condition="(alive _target) && ((_target animationSourcePhase 'klin_open_source') == 1) && (((_target animationSourcePhase 'shell_loading') == 1) || ((_target animationSourcePhase 'shell_3bk13_loading') == 1)) && ((_target animationSourcePhase 'casing_loading') == 0)";
 					statement="[_target, 3] spawn wog_fnc_load_d30";
 					showDisabled=0;
 					exceptions[]={};
@@ -879,7 +879,7 @@ class CfgVehicles
 					selection="action_point_loading";
 					distance=1.5;
 					displayName="$STR_WOG_advanced_artillery_Load_Casing_displayName";
-					condition="((_target animationSourcePhase 'klin_open_source') == 1) && ((_target animationSourcePhase 'casing_loading') == 0) && (((_target animationSourcePhase 'shell_loading') == 1) || ((_target animationSourcePhase 'shell_3bk13_loading') == 1))";
+					condition="(alive _target) && ((_target animationSourcePhase 'klin_open_source') == 1) && ((_target animationSourcePhase 'casing_loading') == 0) && (((_target animationSourcePhase 'shell_loading') == 1) || ((_target animationSourcePhase 'shell_3bk13_loading') == 1))";
 					statement="[_target, 2] spawn wog_fnc_load_d30";
 					showDisabled=0;
 					exceptions[]={};
@@ -891,7 +891,7 @@ class CfgVehicles
 					selection="action_point_loading";
 					distance=1.5;
 					displayName="$STR_WOG_advanced_artillery_Unload_Casing_displayName";
-					condition="((_target animationSourcePhase 'klin_open_source') == 1) && ((_target animationSourcePhase 'casing_loading') == 1) && (((_target animationSourcePhase 'shell_loading') == 1) || ((_target animationSourcePhase 'shell_3bk13_loading') == 1))";
+					condition="(alive _target) && ((_target animationSourcePhase 'klin_open_source') == 1) && ((_target animationSourcePhase 'casing_loading') == 1) && (((_target animationSourcePhase 'shell_loading') == 1) || ((_target animationSourcePhase 'shell_3bk13_loading') == 1))";
 					statement="[_target, 4] spawn wog_fnc_load_d30";
 					showDisabled=0;
 					exceptions[]={};
@@ -904,7 +904,7 @@ class CfgVehicles
 				selection="slingloadcargo3";
 				distance=2.5;
 				displayName="$STR_WOG_advanced_artillery_Towing_Attach_displayName";
-				condition="[_target] call WOG_fnc_D30_can_towing";
+				condition="(alive _target) && ([_target] call WOG_fnc_D30_can_towing)";
 				statement="[_target, 0] spawn WOG_fnc_D30_towing";
 				showDisabled=0;
 				exceptions[]={};
@@ -916,7 +916,7 @@ class CfgVehicles
 				selection="slingloadcargo3";
 				distance=2.5;
 				displayName="$STR_WOG_advanced_artillery_Towing_Detach_displayName";
-				condition="_target getVariable ['WOG_D30_isTowed', false]";
+				condition="(alive _target) && (_target getVariable ['WOG_D30_isTowed', false])";
 				statement="[_target, 1] spawn WOG_fnc_D30_towing";
 				showDisabled=0;
 				exceptions[]={};
