@@ -72,7 +72,7 @@ class CfgWeapons
 	class CannonCore;
 	class mortar_155mm_AMOS: CannonCore
 	{
-		class Single1;
+		class Single5;
 	};
 	class wog_weap_D30: mortar_155mm_AMOS
 	{
@@ -105,7 +105,7 @@ class CfgWeapons
 
 		modes[] = {"Single5"};
 		
-		class Single5: Single1
+		class Single5: Single5
 		{
 			displayName = "";
 		};
