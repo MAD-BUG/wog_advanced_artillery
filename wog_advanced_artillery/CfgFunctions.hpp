@@ -147,6 +147,11 @@ class CfgFunctions
 				file = "wog_advanced_artillery\functions\fnc_changeLocality.sqf";
 				recompile = 0;
 			};
+			class closeBreech
+			{
+				file = "wog_advanced_artillery\functions\fnc_closeBreech.sqf";
+				recompile = 0;
+			};
 		};
 	};
 };

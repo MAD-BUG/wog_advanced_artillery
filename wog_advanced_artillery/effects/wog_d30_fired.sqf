@@ -9,6 +9,9 @@ if(!local _v)exitWith{};
 
 //if (!(_ammo isKindOf 'ShellBase')) exitWith {};
 
+_v setVariable ["WOG_122_shell_loaded", "", true];
+_v setVariable ["WOG_122_casing_loaded", "", true];
+
 //Recoil effect
 private _phase = _v animationPhase "MainGun";
 private _newPhase = ((_phase+(selectRandom [-1, 1])*(selectRandom [0, 1, 2])) min 1167) max -117;

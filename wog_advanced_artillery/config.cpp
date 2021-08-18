@@ -843,7 +843,7 @@ class CfgVehicles
 				distance=1.5;
 				displayName="$STR_WOG_advanced_artillery_Close_Breech_displayName";
 				condition="(alive _target) && (_target animationSourcePhase 'klin_open_source') == 1";
-				statement="if ((_target animationSourcePhase 'handle_klin_open') == 0) then {_target animateSource ['handle_klin_open', 1];} else {_target animateSource ['handle_klin_open', 0];}; [{_this animateSource ['klin_open_source', 0, 0.25]}, _target, 0.6] call CBA_fnc_waitAndExecute;";
+				statement="[_target] spawn WOG_fnc_closeBreech";
 				showDisabled=0;
 				exceptions[]={};
 				priority=5;
