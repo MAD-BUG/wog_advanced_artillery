@@ -30,5 +30,15 @@ if (typeOf (_this select 0) == "wog_pab_2m") then
 	{
 		["wog_advanced_artillery_changeLocality", [_this select 0, player]] call CBA_fnc_serverEvent;
 	};
+	player enableInfoPanelComponent ["left", "MinimapDisplayComponent", false];
+	player enableInfoPanelComponent ["right", "MinimapDisplayComponent", false];
+	[vehicle player, [0]] enableInfoPanelComponent ["left", "MinimapDisplayComponent", false];
+	[vehicle player, [0]] enableInfoPanelComponent ["right", "MinimapDisplayComponent", false];
+	private _compassPFH = [{
+		if (shownCompass) then {showCompass false;};
+		if (ace_maptools_mapGpsShow) then {ace_maptools_mapGpsShow = false;};
+		if (ace_microdagr_currentShowMode != 0) then {[0] call ace_microdagr_fnc_openDisplay;};
+	}, 0] call CBA_fnc_addPerFrameHandler;
+	player setVariable ["wog_advanced_artillery_compassPFH", _compassPFH];
 };
 player setVariable ["wog_advanced_artillery_gunner_handle", _handle];

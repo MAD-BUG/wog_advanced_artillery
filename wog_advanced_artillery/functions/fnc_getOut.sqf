@@ -16,6 +16,10 @@ if (typeOf (_this select 0) == "wog_pab_2m") then
 	{
 		["wog_advanced_artillery_changeLocality", [_this select 0]] call CBA_fnc_serverEvent;
 	};
+	[player getVariable "wog_advanced_artillery_compassPFH"] call CBA_fnc_removePerFrameHandler;
+	showCompass true;
+	player enableInfoPanelComponent ["left", "MinimapDisplayComponent", true];
+	player enableInfoPanelComponent ["right", "MinimapDisplayComponent", true];
 };
 if !(isNull(uiNamespace getVariable ["wog_d30_sight_gui", displayNull])) then
 {
