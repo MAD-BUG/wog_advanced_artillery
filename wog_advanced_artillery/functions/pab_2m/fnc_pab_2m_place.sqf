@@ -12,7 +12,7 @@ if ((_unit call CBA_fnc_getUnitAnim) select 0 == "stand") then {
     params ["_unit"];
 
     // prevent collision damage
-    ["ace_common_fnc_fixCollision", _unit] call CBA_fnc_localEvent;
+    ["ace_common_fixCollision", _unit] call CBA_fnc_localEvent;
 
     // Check for a place to land the spotting scope
     private _direction = getDir _unit;
@@ -32,8 +32,8 @@ if ((_unit call CBA_fnc_getUnitAnim) select 0 == "stand") then {
     _bussoleObject setDir _direction;
     _bussoleObject setPosASL _position;
     _bussoleObject setVectorUp _vectorUp;
-    ["ace_common_fnc_fixPosition", _bussoleObject, _bussoleObject] call CBA_fnc_targetEvent;
-    ["ace_common_fnc_fixFloating", _bussoleObject, _bussoleObject] call CBA_fnc_targetEvent;
+    ["ace_common_fixPosition", _bussoleObject, _bussoleObject] call CBA_fnc_targetEvent;
+    ["ace_common_fixFloating", _bussoleObject, _bussoleObject] call CBA_fnc_targetEvent;
 
     _unit reveal _bussoleObject;
 

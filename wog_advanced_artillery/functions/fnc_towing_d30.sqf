@@ -168,8 +168,8 @@ if (_mode == 0) then
 		[{
 			params ["_gun", "_veh"];
 			
-			["ace_common_fnc_fixCollision", _veh, _veh] call CBA_fnc_targetEvent;
-			["ace_common_fnc_fixCollision", _gun, _gun] call CBA_fnc_targetEvent;
+			["ace_common_fixCollision", _veh, _veh] call CBA_fnc_targetEvent;
+			["ace_common_fixCollision", _gun, _gun] call CBA_fnc_targetEvent;
 			
 			detach _gun;
 
@@ -191,8 +191,8 @@ if (_mode == 0) then
 			
 			[_gun, _vectorUp] remoteExecCall ["setVectorUp", _gun];
 
-			["ace_common_fnc_fixPosition", _gun, _gun] call CBA_fnc_targetEvent;
-			["ace_common_fnc_fixFloating", _gun, _gun] call CBA_fnc_targetEvent;
+			["ace_common_fixPosition", _gun, _gun] call CBA_fnc_targetEvent;
+			["ace_common_fixFloating", _gun, _gun] call CBA_fnc_targetEvent;
 			_gun setVariable ["WOG_D30_isTowed", false, true];
 			_veh setVariable ["WOG_D30_isTowing", false, true];
 		}, [_gun, _veh], 1] call CBA_fnc_waitAndExecute;

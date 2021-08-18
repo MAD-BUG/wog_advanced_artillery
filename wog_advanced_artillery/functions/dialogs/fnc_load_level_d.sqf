@@ -17,7 +17,7 @@ sliderSetPosition [3902, _gun animationSourcePhase "mainLiftT_source"];
 		["wog_advanced_artillery_changeLocality", [_gun, player]] call CBA_fnc_serverEvent;
 	};
 	while {dialog} do {
-		["ace_common_fnc_fixFloating", _this select 0, _this select 0] call CBA_fnc_targetEvent;
+		//["ace_common_fnc_fixFloating", _this select 0, _this select 0] call CBA_fnc_targetEvent;
 		//[_this select 0] call ace_common_fnc_fixFloating;
 		sleep 1;
 	};
