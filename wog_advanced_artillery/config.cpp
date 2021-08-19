@@ -4,7 +4,7 @@ class CfgPatches {
         units[] = {};
         weapons[] = {"WOG_RangeTable_D30"};
         requiredVersion = 1.60;
-        requiredAddons[] = {"a3_weapons_f", "ace_interaction", "rhs_c_heavyweapons", "A3_Static_F_Mortar_01", "ruPal_RHS_to_ACE", "rhsgref_c_vehicles_ret", "ace_spottingscope", "rhs_main"};
+        requiredAddons[] = {"a3_weapons_f", "ace_interaction", "rhs_c_heavyweapons", "A3_Static_F_Mortar_01", "ruPal_RHS_to_ACE", "rhsgref_c_vehicles_ret", "ace_spottingscope", "rhs_main", "ace_maptools"};
         author = "Lex";
     };
 };
@@ -20,6 +20,14 @@ class CfgPatches {
 #include "RscInGameUI.hpp"
 #include "functions\script_component.hpp"
 #include "\x\cba\addons\main\script_macros_common.hpp"
+
+class Extended_PreInit_EventHandlers
+{
+	class ace_maptools
+	{
+		init = "ace_maptools_fnc_isInsideMapTool = compileScript ['wog_advanced_artillery\functions\fnc_isInsideMapTool.sqf', true]; ace_maptools_fnc_updateMapToolMarkers = compileScript ['wog_advanced_artillery\functions\fnc_updateMapToolMarkers.sqf', true]; call compileScript ['\z\ace\addons\maptools\XEH_preInit.sqf']";
+	};
+};
 
 class Extended_PostInit_EventHandlers
 {
@@ -186,6 +194,27 @@ class CfgVehicles
                     statement = "[_player, 'WOG_pab_2m_bag'] call WOG_fnc_PAB_2M_place";
                     showDisabled = 0;
                     icon = "wog_advanced_artillery\pab-2m\data\w_pab_2m_icon.paa";
+                };
+			};
+			
+			class ACE_MapTools
+			{
+				class ACE_MapToolsShowNormal_6000
+				{
+                    displayName = "$STR_ACE_MapTools_MapToolsShowNormal_6000";
+                    condition = "ace_maptools_mapTool_Shown != 3";
+                    statement = "ace_maptools_mapTool_Shown = 3;";
+                    exceptions[] = {"isNotDragging", "notOnMap", "isNotInside", "isNotSitting"};
+                    showDisabled = 1;
+                };
+				
+				class ACE_MapToolsShowSmall_6000
+				{
+                    displayName = "$STR_ACE_MapTools_MapToolsShowSmall_6000";
+                    condition = "ace_maptools_mapTool_Shown != 4";
+                    statement = "ace_maptools_mapTool_Shown = 4;";
+                    exceptions[] = {"isNotDragging", "notOnMap", "isNotInside", "isNotSitting"};
+                    showDisabled = 1;
                 };
 			};
 		};

@@ -286,6 +286,40 @@
 				<English>3BK13 (Full)</English>
 				<Russian>3БК13 (Полный)</Russian>
 			</Key>
+			<Key ID="STR_ACE_MapTools_MapToolsShowNormal_6000">
+				<English>Show Normal Map Tool (6000)</English>
+				<German>Zeige Kartenwerkzeug (normal) (6000)</German>
+				<Spanish>Mostrar herr. de mapa normal (6000)</Spanish>
+				<French>Montrer les outils de navigation (normaux) (6000)</French>
+				<Italian>Visualizza Strumenti Cartografici standard (6000)</Italian>
+				<Portuguese>Mostrar Ferramenta de Mapa Padrão (6000)</Portuguese>
+				<Hungarian>Térképészeti eszköz megjelenítése (normál méret) (6000)</Hungarian>
+				<Polish>Pokaż normalne narzędzia nawigacyjne (6000)</Polish>
+				<Czech>Zobrazit pomůcku k mapě (Velkou) (6000)</Czech>
+				<Russian>Показать инструменты (средн. размер) (6000)</Russian>
+				<Japanese>マップ ツールを表示する (6000)</Japanese>
+				<Korean>보통 독도용 도구로 보기 (6000)</Korean>
+				<Chinesesimp>显示地图工具 (6000)</Chinesesimp>
+				<Chinese>顯示地圖工具 (6000)</Chinese>
+				<Turkish>Normal Harita Aracını Göster (6000)</Turkish>
+			</Key>
+			<Key ID="STR_ACE_MapTools_MapToolsShowSmall_6000">
+				<English>Show Small Map Tool (6000)</English>
+				<German>Zeige Kartenwerkzeug (klein) (6000)</German>
+				<Spanish>Mostrar herr. de mapa pequeñas (6000)</Spanish>
+				<French>Montrer les outils de navigation (petits) (6000)</French>
+				<Italian>Visualizza Strumenti Cartografici piccoli (6000)</Italian>
+				<Portuguese>Mostrar Ferramenta de Mapa Pequena (6000)</Portuguese>
+				<Hungarian>Térképészeti eszköz megjelenítése (kicsinyített) (6000)</Hungarian>
+				<Polish>Pokaż pomniejszone narzędzia nawigacyjne (6000)</Polish>
+				<Czech>Zobrazit pomůcku k mapě (Malou) (6000)</Czech>
+				<Russian>Показать инструменты (малый размер) (6000)</Russian>
+				<Japanese>小さいマップ ツールを表示する (6000)</Japanese>
+				<Korean>작은 독도용 도구로 보기 (6000)</Korean>
+				<Chinesesimp>显示小的地图工具 (6000)</Chinesesimp>
+				<Chinese>顯示小的地圖工具 (6000)</Chinese>
+				<Turkish>Küçük Harita Aracını Göster (6000)</Turkish>
+			</Key>
 		</Container>
 	</Package>
 	<Package name="PAB-2M">
