@@ -17,6 +17,7 @@ class CfgPatches {
 #include "resource\common.hpp"
 #include "resource\RscInterface.hpp"
 #include "resource\RscD30RangeTable.hpp"
+#include "RscInGameUI.hpp"
 #include "functions\script_component.hpp"
 #include "\x\cba\addons\main\script_macros_common.hpp"
 
@@ -658,7 +659,7 @@ class CfgVehicles
 				selectionFireAnim = "gun_muzzle";
 				gunEnd = "gun_chamber";
 				gunBeg = "gun_muzzle";
-				turretinfotype = "";
+				turretinfotype = "wog_gui_optic_d30_op4";
 				gunnerForceOptics = 0;
 				gunnerOpticsModel = "wog_advanced_artillery\D30\2Dscope_D30_panoramic.p3d";
 				magazines[] = {};
@@ -668,6 +669,51 @@ class CfgVehicles
 					initFov = 0.106;
 					maxFov = 0.106;
 					minFov = 0.106;
+				};
+				
+				class OpticsIn
+				{
+					class PanoramicSight
+					{
+						gunnerOpticsModel = "wog_advanced_artillery\D30\2Dscope_D30_panoramic.p3d";
+						//hitpoint = "Hit_Optic_PG1M";
+						initAngleX = 0;
+						initAngleY = 0;
+						initFov = 0.106;
+						maxAngleX = 30;
+						maxAngleY = 100;
+						maxFov = 0.106;
+						maxMoveX = 0;
+						maxMoveY = 0;
+						maxMoveZ = 0;
+						minAngleX = -30;
+						minAngleY = -100;
+						minFov = 0.106;
+						minMoveX = 0;
+						minMoveY = 0;
+						minMoveZ = 0;
+						opticsDisplayName = "PG1";
+						visionMode[] = {"Normal"};
+					};
+					
+					class OP4M_45
+					{
+						opticsDisplayName 	= "OP4";
+						//hitpoint 			= "Hit_Optic_OP4M";
+						camPos				= "view_op4m";
+						camDir				= "view_op4m_dir";
+						initAngleX			= 0;
+						minAngleX			= -30;
+						maxAngleX			= 30;
+						initAngleY			= 0;
+						minAngleY			= -100;
+						maxAngleY			= 100;
+						initFov 			= 0.127273;
+						minFov 				= 0.127273;
+						maxFov 				= 0.127273;
+						visionMode[]		= {"Normal"};
+						gunnerOpticsModel	= "\rhsafrf\addons\rhs_optics\vehicles\rhs_empty.p3d";
+					};
 				};
 			};
 		};
