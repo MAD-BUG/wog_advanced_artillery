@@ -216,6 +216,7 @@
 				<Original>Fix Floating</Original>
 				<English>Fix Floating</English>
 				<Russian>Исправить висение</Russian>
+				<Czech>Oprava vznášení</Czech>
 			</Key>
 		</Container>
 	</Package>
@@ -328,36 +329,43 @@
 				<Original>Setup Aiming Circle PAB-2M</Original>
 				<English>Setup Aiming Circle PAB-2M</English>
 				<Russian>Установить буссоль ПАБ-2М</Russian>
+				<Czech>Nastavit buzolu PAB-2M</Czech>
 			</Key>
 			<Key ID="STR_WOG_advanced_artillery_pab_2m_displayName">
 				<Original>Aiming Circle PAB-2M</Original>
 				<English>Aiming Circle PAB-2M</English>
 				<Russian>Буссоль ПАБ-2М</Russian>
+				<Czech>Buzola PAB-2M</Czech>
 			</Key>
 			<Key ID="STR_WOG_advanced_artillery_pab_2m_folded_displayName">
 				<Original>Aiming Circle PAB-2M (Folded)</Original>
 				<English>Aiming Circle PAB-2M (Folded)</English>
 				<Russian>Буссоль ПАБ-2М (сложена)</Russian>
+				<Czech>Buzola PAB-2M (složená)</Czech>
 			</Key>
 			<Key ID="STR_WOG_advanced_artillery_pab_2m_box_displayName">
 				<Original>Aiming Circle PAB-2M Box</Original>
 				<English>Aiming Circle PAB-2M Box</English>
 				<Russian>Ящик с буссолью ПАБ-2М</Russian>
+				<Czech>Box s buzolou PAB-2M</Czech>
 			</Key>
 			<Key ID="STR_WOG_advanced_artillery_pab_2m_level">
 				<Original>Level</Original>
 				<English>Level</English>
 				<Russian>Горизонтировать</Russian>
+				<Czech>Horizont</Czech>
 			</Key>
 			<Key ID="STR_WOG_advanced_artillery_pab_2m_fold">
 				<Original>Fold</Original>
 				<English>Fold</English>
 				<Russian>Сложить</Russian>
+				<Czech>Složit</Czech>
 			</Key>
 			<Key ID="STR_WOG_advanced_artillery_pab_2m_leveling">
 				<Original>Leveling...</Original>
 				<English>Leveling...</English>
 				<Russian>Горизонтирование...</Russian>
+				<Czech>Vyrovnánání...</Czech>
 			</Key>
 		</Container>
 	</Package>

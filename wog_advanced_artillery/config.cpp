@@ -520,6 +520,9 @@ class CfgVehicles
 		editorPreview="\wog_advanced_artillery\resource\data\wog_122_ammobox_editor_preview.jpg";
 		icon="\arty_ammo\data\120mm\UI\icon_box_ca.paa";
 		
+		hiddenSelections[] = {"camo1"};
+		hiddenSelectionsTextures[] = {"wog_advanced_artillery\ammobox_122\data\wog_122_ammobox_of462_decal_ca.paa"};
+		
 		class AnimationSources
 		{
 			class lid_rotation
@@ -647,6 +650,7 @@ class CfgVehicles
 	class wog_122_3bk13_ammobox: wog_122_ammobox
 	{
 		displayName="$STR_WOG_advanced_artillery_122mm_3bk13_Ammobox_displayName";
+		hiddenSelectionsTextures[] = {"wog_advanced_artillery\ammobox_122\data\wog_122_ammobox_3bk13_decal_ca.paa"};
 		
 		class EventHandlers: EventHandlers
 		{

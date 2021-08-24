@@ -274,7 +274,7 @@ class WOG_ARTY_LEVEL_D {
 			w = 11 * WOG_ARTY_GUI_GRID_W;
 			h = 2 * WOG_ARTY_GUI_GRID_H;
 			colorText[]={0.7,0.7,0,1};
-			onMouseButtonClick = "[player getVariable 'WOG_D30_gunObj', [0,0,0.1]] remoteExecCall ['setVelocity', player getVariable 'WOG_D30_gunObj']";
+			onMouseButtonClick = "[player getVariable 'WOG_D30_gunObj', [0,0,0.5]] remoteExecCall ['setVelocity', player getVariable 'WOG_D30_gunObj']";
 		};
 	};
 };
