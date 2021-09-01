@@ -6,176 +6,366 @@
 				<Original>2A18M (D-30A) (WOG)</Original>
 				<English>2A18M (D-30A) (WOG)</English>
 				<Russian>2А18М (Д-30А) (WOG)</Russian>
+				<Czech>2A18M (D-30A)  (WOG)</Czech>
 			</Key>
 			<Key ID="STR_WOG_advanced_artillery_Sight_displayName">
 				<Original>&lt;t color='#CCCCCC'&gt;D-726-45 Sight Unit&lt;/t&gt;</Original>
 				<English>&lt;t color='#CCCCCC'&gt;D-726-45 Sight Unit&lt;/t&gt;</English>
 				<Russian>&lt;t color='#CCCCCC'&gt;Прицел Д-726-45&lt;/t&gt;</Russian>
+				<Czech>&lt;t color='#CCCCCC'&gt;D-726-45 Zaměřovač&lt;/t&gt;</Czech>
 			</Key>
 			<Key ID="STR_WOG_advanced_artillery_Leveling_displayName">
 				<Original>Leveling</Original>
 				<English>Leveling</English>
 				<Russian>Горизонтирование</Russian>
+				<Czech>Vyrovnání</Czech>
 			</Key>
 			<Key ID="STR_WOG_advanced_artillery_Open_Breech_displayName">
 				<Original>Open breech</Original>
 				<English>Open breech</English>
 				<Russian>Открыть затвор</Russian>
+				<Czech>Otevřít závěr</Czech>
 			</Key>
 			<Key ID="STR_WOG_advanced_artillery_Close_Breech_displayName">
 				<Original>Close breech</Original>
 				<English>Close breech</English>
 				<Russian>Закрыть затвор</Russian>
+				<Czech>Zavřít závěr</Czech>
 			</Key>
 			<Key ID="STR_WOG_advanced_artillery_Load_Shell_displayName">
 				<Original>Load shell</Original>
 				<English>Load shell</English>
 				<Russian>Зарядить снаряд</Russian>
+				<Czech>Vložit granát</Czech>
 			</Key>
 			<Key ID="STR_WOG_advanced_artillery_Unload_Shell_displayName">
 				<Original>Unload shell</Original>
 				<English>Unload shell</English>
 				<Russian>Разрядить снаряд</Russian>
+				<Czech>Vyjmout granát</Czech>
 			</Key>
 			<Key ID="STR_WOG_advanced_artillery_Load_Casing_displayName">
 				<Original>Load casing</Original>
 				<English>Load casing</English>
 				<Russian>Зарядить заряд</Russian>
+				<Czech>Vložit nábojnici</Czech>
 			</Key>
 			<Key ID="STR_WOG_advanced_artillery_Unload_Casing_displayName">
 				<Original>Unload casing</Original>
 				<English>Unload casing</English>
 				<Russian>Разрядить заряд</Russian>
+				<Czech>Vyjmout nábojnici</Czech>
 			</Key>
 			<Key ID="STR_WOG_advanced_artillery_Towing_Attach_displayName">
 				<Original>Attach</Original>
 				<English>Attach</English>
 				<Russian>Подцепить</Russian>
+				<Czech>Připnout</Czech>
 			</Key>
 			<Key ID="STR_WOG_advanced_artillery_Towing_Detach_displayName">
 				<Original>Detach</Original>
 				<English>Detach</English>
 				<Russian>Отцепить</Russian>
+				<Czech>Odepnout</Czech>
 			</Key>
 			<Key ID="STR_WOG_advanced_artillery_122mm_Ammobox_displayName">
 				<Original>122mm HE ammo box</Original>
 				<English>122mm HE ammo box</English>
 				<Russian>Ящик с 122-мм ОФ снарядами</Russian>
+				<Czech>122 mm explozivní (OF-462) ammo bedna</Czech>
 			</Key>
 			<Key ID="STR_WOG_advanced_artillery_122mm_3bk13_Ammobox_displayName">
 				<Original>122mm 3BK13 ammo box</Original>
 				<English>122mm 3BK13 ammo box</English>
 				<Russian>Ящик с 122-мм 3БК13 снарядами</Russian>
+				<Czech>122 mm kumulativní (3BK13) ammo bedna</Czech>
 			</Key>
 			<Key ID="STR_WOG_advanced_artillery_Prep_charges_displayName">
 				<Original>Charge Settings</Original>
 				<English>Charge Settings</English>
 				<Russian>Подготовка заряда</Russian>
+				<Czech>Nastavení nálože</Czech>
 			</Key>
 			<Key ID="STR_WOG_advanced_artillery_D30_RangeTable_displayName">
 				<Original>D-30 Range Table (WOG)</Original>
 				<English>D-30 Range Table (WOG)</English>
 				<Russian>Таблица стрельбы для Д-30 (WOG)</Russian>
+				<Czech>D-30 balistické tabulky</Czech>
 			</Key>
 			<Key ID="STR_WOG_advanced_artillery_Current_Charge_displayName">
 				<Original>Current charge</Original>
 				<English>Current charge</English>
 				<Russian>Текущий заряд</Russian>
+				<Czech>Současná nálož</Czech>
 			</Key>
 			<Key ID="STR_WOG_advanced_artillery_Required_Charge_displayName">
 				<Original>Required charge</Original>
 				<English>Required charge</English>
 				<Russian>Требуемый заряд</Russian>
+				<Czech>Požadovaná nálož</Czech>
 			</Key>
 			<Key ID="STR_WOG_advanced_artillery_Set_Charge_displayName">
 				<Original>Set</Original>
 				<English>Set</English>
 				<Russian>Подготовить</Russian>
+				<Czech>Nastavit</Czech>
 			</Key>
 			<Key ID="STR_WOG_advanced_artillery_Close_displayName">
 				<Original>Close</Original>
 				<English>Close</English>
 				<Russian>Закрыть</Russian>
+				<Czech>Zavřít</Czech>
 			</Key>
 			<Key ID="STR_WOG_advanced_artillery_Left_Leg_displayName">
 				<Original>Left leg</Original>
 				<English>Left leg</English>
 				<Russian>Левая опора</Russian>
+				<Czech>Levá noha</Czech>
 			</Key>
 			<Key ID="STR_WOG_advanced_artillery_Right_Leg_displayName">
 				<Original>Right leg</Original>
 				<English>Right leg</English>
 				<Russian>Правая опора</Russian>
+				<Czech>Pravá noha</Czech>
 			</Key>
 			<Key ID="STR_WOG_advanced_artillery_Central_Leg_displayName">
 				<Original>Central leg</Original>
 				<English>Central leg</English>
 				<Russian>Центральная опора</Russian>
+				<Czech>Přední noha</Czech>
 			</Key>
 			<Key ID="STR_WOG_advanced_artillery_Transverse_Level_displayName">
 				<Original>Transverse leveling bubble</Original>
 				<English>Transverse leveling bubble</English>
 				<Russian>Поперечный уровень</Russian>
+				<Czech>Příčná vodováha</Czech>
 			</Key>
 			<Key ID="STR_WOG_advanced_artillery_Longitudinal_Level_displayName">
 				<Original>Longitudinal leveling bubble</Original>
 				<English>Longitudinal leveling bubble</English>
 				<Russian>Продольный уровень</Russian>
+				<Czech>Podélná vodováha</Czech>
 			</Key>
 			<Key ID="STR_WOG_advanced_artillery_Charges_RangeTable_displayName">
 				<Original>Charge: %1</Original>
 				<English>Charge: %1</English>
 				<Russian>Заряд: %1</Russian>
+				<Czech>Nálož: %1</Czech>
 			</Key>
 			<Key ID="STR_WOG_advanced_artillery_Exec_Attach_displayName">
 				<Original>Attaching...</Original>
 				<English>Attaching...</English>
 				<Russian>Выполнение прицепки...</Russian>
+				<Czech>Připínání...</Czech>
 			</Key>
 			<Key ID="STR_WOG_advanced_artillery_Exec_Detach_displayName">
 				<Original>Detaching...</Original>
 				<English>Detaching...</English>
 				<Russian>Выполнение отцепки...</Russian>
+				<Czech>Odepínání...</Czech>
 			</Key>
 			<Key ID="STR_WOG_advanced_artillery_ChargeFull_displayName">
 				<Original>Charge Full Zh-9</Original>
 				<English>Charge Full Zh-9</English>
 				<Russian>Полный заряд Ж-9</Russian>
+				<Czech>Nálož Zh-9 plná</Czech>
 			</Key>
 			<Key ID="STR_WOG_advanced_artillery_ChargeReduced_displayName">
 				<Original>Charge Reduced Zh-10</Original>
 				<English>Charge Reduced Zh-10</English>
 				<Russian>Уменьшенный переменный заряд Ж-10</Russian>
+				<Czech>Nálož Zh-10 oslabená</Czech>
 			</Key>
 			<Key ID="STR_WOG_advanced_artillery_ChargeI_displayName">
 				<Original>Charge I Zh-10</Original>
 				<English>Charge I Zh-10</English>
 				<Russian>Первый заряд Ж-10</Russian>
+				<Czech>Nálož Zh-10 první</Czech>
 			</Key>
 			<Key ID="STR_WOG_advanced_artillery_ChargeII_displayName">
 				<Original>Charge II Zh-10</Original>
 				<English>Charge II Zh-10</English>
 				<Russian>Второй заряд Ж-10</Russian>
+				<Czech>Nálož Zh-10 druhá</Czech>
 			</Key>
 			<Key ID="STR_WOG_advanced_artillery_ChargeIII_displayName">
 				<Original>Charge III Zh-10</Original>
 				<English>Charge III Zh-10</English>
 				<Russian>Третий заряд Ж-10</Russian>
+				<Czech>Nálož Zh-10 třetí</Czech>
 			</Key>
 			<Key ID="STR_WOG_advanced_artillery_ChargeIV_displayName">
 				<Original>Charge IV Zh-10</Original>
 				<English>Charge IV Zh-10</English>
 				<Russian>Четвертый заряд Ж-10</Russian>
+				<Czech>Nálož Zh-10 čtvrtá</Czech>
 			</Key>
 			<Key ID="STR_WOG_advanced_artillery_Shell_OF462_displayName">
 				<Original>Shell OF-462</Original>
 				<English>Shell OF-462</English>
 				<Russian>Снаряд ОФ-462</Russian>
+				<Czech>Granát OF-462 (explozivní) pro D-30</Czech>
 			</Key>
 			<Key ID="STR_WOG_advanced_artillery_Shell_3BK13_displayName">
 				<Original>Shell 3BK13</Original>
 				<English>Shell 3BK13</English>
 				<Russian>Снаряд 3БК13</Russian>
+				<Czech>Granát OF-462 (kumulativní) pro D-30</Czech>
+			</Key>
+			<Key ID="STR_WOG_advanced_artillery_Fix_Floating_displayName">
+				<Original>Fix Floating</Original>
+				<English>Fix Floating</English>
+				<Russian>Исправить висение</Russian>
+				<Czech>Oprava vznášení</Czech>
+			</Key>
+		</Container>
+	</Package>
+	<Package name="D30_mags">
+		<Container name="Names">
+			<Key ID="STR_WOG_advanced_artillery_charge_full">
+				<Original>Full</Original>
+				<English>Full</English>
+				<Russian>Полный</Russian>
+			</Key>
+			<Key ID="STR_WOG_advanced_artillery_charge_reduced">
+				<Original>Reduced</Original>
+				<English>Reduced</English>
+				<Russian>Уменьшенный</Russian>
+			</Key>
+			<Key ID="STR_WOG_advanced_artillery_charge_one">
+				<Original>Charge 1</Original>
+				<English>Charge 1</English>
+				<Russian>Первый</Russian>
+			</Key>
+			<Key ID="STR_WOG_advanced_artillery_charge_two">
+				<Original>Charge 2</Original>
+				<English>Charge 2</English>
+				<Russian>Второй</Russian>
+			</Key>
+			<Key ID="STR_WOG_advanced_artillery_charge_three">
+				<Original>Charge 3</Original>
+				<English>Charge 3</English>
+				<Russian>Третий</Russian>
+			</Key>
+			<Key ID="STR_WOG_advanced_artillery_charge_four">
+				<Original>Charge 4</Original>
+				<English>Charge 4</English>
+				<Russian>Четвертый</Russian>
+			</Key>
+			<Key ID="STR_WOG_advanced_artillery_of462_full">
+				<Original>OF-462ZH (Full)</Original>
+				<English>OF-462ZH (Full)</English>
+				<Russian>ОФ-462Ж (Полный)</Russian>
+			</Key>
+			<Key ID="STR_WOG_advanced_artillery_of462_reduced">
+				<Original>OF-462ZH (Reduced)</Original>
+				<English>OF-462ZH (Reduced)</English>
+				<Russian>ОФ-462Ж (Уменьшенный)</Russian>
+			</Key>
+			<Key ID="STR_WOG_advanced_artillery_of462_one">
+				<Original>OF-462ZH (Charge 1)</Original>
+				<English>OF-462ZH (Charge 1)</English>
+				<Russian>ОФ-462Ж (Первый)</Russian>
+			</Key>
+			<Key ID="STR_WOG_advanced_artillery_of462_two">
+				<Original>OF-462ZH (Charge 2)</Original>
+				<English>OF-462ZH (Charge 2)</English>
+				<Russian>ОФ-462Ж (Второй)</Russian>
+			</Key>
+			<Key ID="STR_WOG_advanced_artillery_of462_three">
+				<Original>OF-462ZH (Charge 3)</Original>
+				<English>OF-462ZH (Charge 3)</English>
+				<Russian>ОФ-462Ж (Третий)</Russian>
+			</Key>
+			<Key ID="STR_WOG_advanced_artillery_of462_four">
+				<Original>OF-462ZH (Charge 4)</Original>
+				<English>OF-462ZH (Charge 4)</English>
+				<Russian>ОФ-462Ж (Четвертый)</Russian>
+			</Key>
+			<Key ID="STR_WOG_advanced_artillery_3bk13_full">
+				<Original>3BK13 (Full)</Original>
+				<English>3BK13 (Full)</English>
+				<Russian>3БК13 (Полный)</Russian>
+			</Key>
+			<Key ID="STR_ACE_MapTools_MapToolsShowNormal_6000">
+				<English>Show Normal Map Tool (6000)</English>
+				<German>Zeige Kartenwerkzeug (normal) (6000)</German>
+				<Spanish>Mostrar herr. de mapa normal (6000)</Spanish>
+				<French>Montrer les outils de navigation (normaux) (6000)</French>
+				<Italian>Visualizza Strumenti Cartografici standard (6000)</Italian>
+				<Portuguese>Mostrar Ferramenta de Mapa Padrão (6000)</Portuguese>
+				<Hungarian>Térképészeti eszköz megjelenítése (normál méret) (6000)</Hungarian>
+				<Polish>Pokaż normalne narzędzia nawigacyjne (6000)</Polish>
+				<Czech>Zobrazit pomůcku k mapě (Velkou) (6000)</Czech>
+				<Russian>Показать инструменты (средн. размер) (6000)</Russian>
+				<Japanese>マップ ツールを表示する (6000)</Japanese>
+				<Korean>보통 독도용 도구로 보기 (6000)</Korean>
+				<Chinesesimp>显示地图工具 (6000)</Chinesesimp>
+				<Chinese>顯示地圖工具 (6000)</Chinese>
+				<Turkish>Normal Harita Aracını Göster (6000)</Turkish>
+			</Key>
+			<Key ID="STR_ACE_MapTools_MapToolsShowSmall_6000">
+				<English>Show Small Map Tool (6000)</English>
+				<German>Zeige Kartenwerkzeug (klein) (6000)</German>
+				<Spanish>Mostrar herr. de mapa pequeñas (6000)</Spanish>
+				<French>Montrer les outils de navigation (petits) (6000)</French>
+				<Italian>Visualizza Strumenti Cartografici piccoli (6000)</Italian>
+				<Portuguese>Mostrar Ferramenta de Mapa Pequena (6000)</Portuguese>
+				<Hungarian>Térképészeti eszköz megjelenítése (kicsinyített) (6000)</Hungarian>
+				<Polish>Pokaż pomniejszone narzędzia nawigacyjne (6000)</Polish>
+				<Czech>Zobrazit pomůcku k mapě (Malou) (6000)</Czech>
+				<Russian>Показать инструменты (малый размер) (6000)</Russian>
+				<Japanese>小さいマップ ツールを表示する (6000)</Japanese>
+				<Korean>작은 독도용 도구로 보기 (6000)</Korean>
+				<Chinesesimp>显示小的地图工具 (6000)</Chinesesimp>
+				<Chinese>顯示小的地圖工具 (6000)</Chinese>
+				<Turkish>Küçük Harita Aracını Göster (6000)</Turkish>
+			</Key>
+		</Container>
+	</Package>
+	<Package name="PAB-2M">
+		<Container name="Names">
+			<Key ID="STR_WOG_advanced_artillery_pab_2m_assemble">
+				<Original>Setup Aiming Circle PAB-2M</Original>
+				<English>Setup Aiming Circle PAB-2M</English>
+				<Russian>Установить буссоль ПАБ-2М</Russian>
+				<Czech>Nastavit buzolu PAB-2M</Czech>
+			</Key>
+			<Key ID="STR_WOG_advanced_artillery_pab_2m_displayName">
+				<Original>Aiming Circle PAB-2M</Original>
+				<English>Aiming Circle PAB-2M</English>
+				<Russian>Буссоль ПАБ-2М</Russian>
+				<Czech>Buzola PAB-2M</Czech>
+			</Key>
+			<Key ID="STR_WOG_advanced_artillery_pab_2m_folded_displayName">
+				<Original>Aiming Circle PAB-2M (Folded)</Original>
+				<English>Aiming Circle PAB-2M (Folded)</English>
+				<Russian>Буссоль ПАБ-2М (сложена)</Russian>
+				<Czech>Buzola PAB-2M (složená)</Czech>
+			</Key>
+			<Key ID="STR_WOG_advanced_artillery_pab_2m_box_displayName">
+				<Original>Aiming Circle PAB-2M Box</Original>
+				<English>Aiming Circle PAB-2M Box</English>
+				<Russian>Ящик с буссолью ПАБ-2М</Russian>
+				<Czech>Box s buzolou PAB-2M</Czech>
+			</Key>
+			<Key ID="STR_WOG_advanced_artillery_pab_2m_level">
+				<Original>Level</Original>
+				<English>Level</English>
+				<Russian>Горизонтировать</Russian>
+				<Czech>Horizont</Czech>
+			</Key>
+			<Key ID="STR_WOG_advanced_artillery_pab_2m_fold">
+				<Original>Fold</Original>
+				<English>Fold</English>
+				<Russian>Сложить</Russian>
+				<Czech>Složit</Czech>
+			</Key>
+			<Key ID="STR_WOG_advanced_artillery_pab_2m_leveling">
+				<Original>Leveling...</Original>
+				<English>Leveling...</English>
+				<Russian>Горизонтирование...</Russian>
+				<Czech>Vyrovnánání...</Czech>
 			</Key>
 		</Container>
 	</Package>

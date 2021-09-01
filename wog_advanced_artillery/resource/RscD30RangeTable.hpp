@@ -26,9 +26,9 @@ class WOG_D30_RangeTable_Dialog
 		class ChargeBackground: RscText
 		{
 			idc=-1;
-			x="14 *(safeZoneH / 40) +       (safezoneX + (safezoneW - safeZoneH)/2)";
+			x="12 *(safeZoneH / 40) +       (safezoneX + (safezoneW - safeZoneH)/2)";
 			y="1 * ((safeZoneH / 1.2) / 25) +   (safezoneY + (safezoneH - (safeZoneH / 1.2))/2)";
-			w="4 * (safeZoneH / 40)";
+			w="6 * (safeZoneH / 40)";
 			h="5 * ((safeZoneH / 1.2) / 25)";
 			colorBackground[]={0,0,0,1};
 		};
@@ -77,9 +77,9 @@ class WOG_D30_RangeTable_Dialog
 		{
 			idc=1501;
 			style="ST_RIGHT";
-			x="14 *(safeZoneH / 40) + (safezoneX + (safezoneW - safeZoneH)/2)";
+			x="12 *(safeZoneH / 40) + (safezoneX + (safezoneW - safeZoneH)/2)";
 			y="1 * ((safeZoneH / 1.2) / 25) + (safezoneY + (safezoneH - (safeZoneH / 1.2))/2)";
-			w="4 * (safeZoneH / 40)";
+			w="6 * (safeZoneH / 40)";
 			h="5 * ((safeZoneH / 1.2) / 25)";
 			onLBSelChanged="_this call WOG_fnc_rangeTablePageChange";
 		};

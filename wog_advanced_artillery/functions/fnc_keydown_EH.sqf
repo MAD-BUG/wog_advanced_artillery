@@ -1,3 +1,4 @@
+if ((gunner (vehicle player)) != player) exitWith {};
 if ((_this select 1) == 200) exitWith {[_this select 2,_this select 3,_this select 4,1] call wog_fnc_D30_elevate;};  //UP_arrow
 if ((_this select 1) == 208) exitWith {[_this select 2,_this select 3,_this select 4,-1] call wog_fnc_D30_elevate;};  //DOWN_arrow
 if ((_this select 1) == 203) exitWith {[_this select 2,_this select 3,_this select 4,1] call wog_fnc_D30_traverse;};  //LEFT_arrow

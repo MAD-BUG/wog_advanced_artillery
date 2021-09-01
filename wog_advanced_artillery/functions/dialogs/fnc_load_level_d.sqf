@@ -9,9 +9,23 @@ sliderSetPosition [3900, _gun animationSourcePhase "leftLiftT_source"];
 sliderSetPosition [3901, _gun animationSourcePhase "rightLiftT_source"];
 sliderSetPosition [3902, _gun animationSourcePhase "mainLiftT_source"];
 [_gun] spawn {
+	params ["_gun"];
+	{_x action ["Eject", _gun]; unassignVehicle _x}foreach (crew _gun);
+	[_gun, true] remoteExecCall ["lock", _gun];
+	if !(local _gun) then
+	{
+		["wog_advanced_artillery_changeLocality", [_gun, player]] call CBA_fnc_serverEvent;
+	};
 	while {dialog} do {
-		[_this select 0] call ace_common_fnc_fixFloating;
+		//["ace_common_fnc_fixFloating", _this select 0, _this select 0] call CBA_fnc_targetEvent;
+		//[_this select 0] call ace_common_fnc_fixFloating;
 		sleep 1;
+	};
+	[_gun, false] remoteExecCall ["lock", _gun];
+	_gun lock false;
+	if (local _gun) then
+	{
+		["wog_advanced_artillery_changeLocality", [_gun]] call CBA_fnc_serverEvent;
 	};
 };
 [_long_level_ctrl, _lat_level_ctrl] spawn {

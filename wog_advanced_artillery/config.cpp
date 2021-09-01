@@ -4,7 +4,7 @@ class CfgPatches {
         units[] = {};
         weapons[] = {"WOG_RangeTable_D30"};
         requiredVersion = 1.60;
-        requiredAddons[] = {"a3_weapons_f", "ace_interaction", "rhs_c_heavyweapons", "A3_Static_F_Mortar_01", "ruPal_RHS_to_ACE", "rhsgref_c_vehicles_ret"};
+        requiredAddons[] = {"a3_weapons_f", "ace_interaction", "rhs_c_heavyweapons", "A3_Static_F_Mortar_01", "ruPal_RHS_to_ACE", "rhsgref_c_vehicles_ret", "ace_spottingscope", "rhs_main", "ace_maptools"};
         author = "Lex";
     };
 };
@@ -13,11 +13,21 @@ class CfgPatches {
 #include "CfgMagazines.hpp"
 #include "CfgSounds.hpp"
 #include "CfgAmmo.hpp"
+#include "CfgMoves.hpp"
 #include "resource\common.hpp"
 #include "resource\RscInterface.hpp"
 #include "resource\RscD30RangeTable.hpp"
+#include "RscInGameUI.hpp"
 #include "functions\script_component.hpp"
 #include "\x\cba\addons\main\script_macros_common.hpp"
+
+class Extended_PreInit_EventHandlers
+{
+	class ace_maptools
+	{
+		init = "ace_maptools_fnc_isInsideMapTool = compileScript ['wog_advanced_artillery\functions\fnc_isInsideMapTool.sqf', true]; ace_maptools_fnc_updateMapToolMarkers = compileScript ['wog_advanced_artillery\functions\fnc_updateMapToolMarkers.sqf', true]; call compileScript ['\z\ace\addons\maptools\XEH_preInit.sqf']";
+	};
+};
 
 class Extended_PostInit_EventHandlers
 {
@@ -68,7 +78,11 @@ class WOG_D30_Fired
 
 class CfgWeapons
 {
-	class mortar_155mm_AMOS;
+	class CannonCore;
+	class mortar_155mm_AMOS: CannonCore
+	{
+		class Single5;
+	};
 	class wog_weap_D30: mortar_155mm_AMOS
 	{
 		displayName = "$STR_WOG_advanced_artillery_D30_displayName";
@@ -99,6 +113,11 @@ class CfgWeapons
 		};
 
 		modes[] = {"Single5"};
+		
+		class Single5: Single5
+		{
+			displayName = "";
+		};
 
 		magazines[] =
 		{
@@ -110,6 +129,15 @@ class CfgWeapons
 			"wog_mag_of462_charge_4",
 			"wog_mag_3bk13_charge_full"
 		};
+	};
+	
+	class MGun;
+	class wog_weap_pab_2m: MGun
+	{
+		scope = 1;
+		cursor = "EmptyCursor";
+		cursorAim = "EmptyCursor";
+		displayName = "$STR_WOG_advanced_artillery_pab_2m_displayName";
 	};
 	
 	class ACE_ItemCore;
@@ -126,6 +154,8 @@ class CfgWeapons
 		};
 	};
 };
+
+class CBA_Extended_EventHandlers_base;
 
 class CfgVehicles
 {
@@ -156,11 +186,322 @@ class CfgVehicles
                     icon = "\z\ace\addons\ruPal_RHS_to_ACE\UI\icon_rangeTable.paa";
                     exceptions[] = {"notOnMap", "isNotInside", "isNotSitting"};
                 };
+				
+				class WOG_pab_2m_place
+				{
+                    displayName = "$STR_WOG_advanced_artillery_pab_2m_assemble";
+                    condition = "(backpack _player) == 'WOG_pab_2m_bag'";
+                    statement = "[_player, 'WOG_pab_2m_bag'] call WOG_fnc_PAB_2M_place";
+                    showDisabled = 0;
+                    icon = "wog_advanced_artillery\pab-2m\data\w_pab_2m_icon.paa";
+                };
+			};
+			
+			class ACE_MapTools
+			{
+				class ACE_MapToolsShowNormal_6000
+				{
+                    displayName = "$STR_ACE_MapTools_MapToolsShowNormal_6000";
+                    condition = "ace_maptools_mapTool_Shown != 3";
+                    statement = "ace_maptools_mapTool_Shown = 3;";
+                    exceptions[] = {"isNotDragging", "notOnMap", "isNotInside", "isNotSitting"};
+                    showDisabled = 1;
+                };
+				
+				class ACE_MapToolsShowSmall_6000
+				{
+                    displayName = "$STR_ACE_MapTools_MapToolsShowSmall_6000";
+                    condition = "ace_maptools_mapTool_Shown != 4";
+                    statement = "ace_maptools_mapTool_Shown = 4;";
+                    exceptions[] = {"isNotDragging", "notOnMap", "isNotInside", "isNotSitting"};
+                    showDisabled = 1;
+                };
 			};
 		};
 	};
 	
+	class Bag_Base;
+	class Weapon_Bag_Base: Bag_Base
+	{
+		class assembleInfo;
+	};
+	
+	class WOG_pab_2m_bag: Weapon_Bag_Base
+	{
+		dlc="RHS_AFRF";
+		scope=2;
+		author="$STR_A3_Bohemia_Interactive";
+		displayName="$STR_WOG_advanced_artillery_pab_2m_folded_displayName";
+		mass=100;
+		model="\rhsafrf\addons\rhs_heavyweapons\bags\StaticY.p3d";
+		picture="\rhsafrf\addons\rhs_heavyweapons\bags\staticY_CA.paa";
+		icon="\rhsafrf\addons\rhs_heavyweapons\bags\mapIcon_backpack_CA.paa";
+		class assembleInfo
+		{
+			primary=0;
+			base="";
+			assembleTo="";
+			dissasembleTo[]={};
+			displayName="";
+		};
+		faction="rhs_faction_msv";
+		editorSubcategory="EdSubcat_DismantledWeapons";
+	};
+	
 	class NATO_Box_Base;
+	class Box_NATO_Support_F;
+	class WOG_Box_pab_2m: Box_NATO_Support_F
+	{
+		displayName = "$STR_WOG_advanced_artillery_pab_2m_box_displayName";
+		editorPreview = "\A3\EditorPreviews_F\Data\CfgVehicles\Box_NATO_Ammo_F.jpg";
+		model = "\A3\weapons_F\AmmoBoxes\AmmoBox_F";
+		_generalMacro = "Box_NATO_Support_F";
+		author = "Bohemia Interactive";
+		scope = 2;
+		icon = "iconCrateLarge";
+		
+		class TransportBackpacks
+		{
+			class _xx_WOG_pab_2m
+			{
+				backpack = "WOG_pab_2m_bag";
+				count = 1;
+			};
+        };
+		class TransportItems {};
+		class TransportMagazines {};
+	};
+	
+	class LandVehicle;
+	class StaticWeapon: LandVehicle
+	{
+		class Turrets
+		{
+			class MainTurret;
+		};
+		
+		class ACE_Actions
+		{
+			class ACE_MainActions;
+		};
+	};
+	
+	class wog_pab_2m: StaticWeapon
+	{
+		class EventHandlers
+		{
+			class CBA_Extended_EventHandlers: CBA_Extended_EventHandlers_base {};
+		};
+		
+		author = "Lex";
+        scope = 2;
+        side = 0;
+        faction = "rhs_faction_msv";
+        crew = "rhs_msv_emr_efreitor";
+        typicalCargo[] = {"Soldier"};
+        displayName = "$STR_WOG_advanced_artillery_pab_2m_displayName";
+        model = "wog_advanced_artillery\pab-2m\pab_2m.p3d";
+		icon = "wog_advanced_artillery\pab-2m\data\icomap\icomap_pab_2m_ca.paa";
+        mapSize = 0.5;
+        transportSoldier = 0;
+        getInAction = "";
+        getOutAction = "";
+        editorSubcategory = "EdSubcat_Turrets";
+		
+		ace_cargo_canLoad = 0;
+
+        threat[] = {0.7, 0.3, 0};
+        accuracy = 0.12;
+        cost = 10000;
+		attenuationEffectType = "";
+		
+		class Hitpoints
+		{
+			class HitHull
+			{
+				armor = 1;
+				passThrough = 1;
+				name = "zbytek";
+			};
+		};
+		
+		class Turrets: Turrets
+		{
+            class MainTurret: MainTurret
+			{
+				minTurn = -180;
+                maxTurn = 180;
+                initTurn = 0;
+                minElev = -18;
+                maxElev = 18;
+                initElev = 0;
+
+				class ViewGunner
+				{
+					initAngleX = -20;
+					minAngleX = -60;
+					maxAngleX = 30;
+					initAngleY = 0;
+					minAngleY = -100;
+					maxAngleY = 100;
+					initFov = 0.75;
+					minFov = 0.25;
+					maxFov = 1.25;
+				};
+
+				class ViewOptics
+				{
+					initAngleX = 0;
+					minAngleX = -30;
+					maxAngleX = 30;
+					initAngleY = 0;
+					minAngleY = -100;
+					maxAngleY = 100;
+					minFov = 0.053;
+					maxFov = 0.053;
+					initFov= 0.053;
+				};
+				
+				class OpticsIn
+				{
+					class MainOptics
+					{
+						gunnerOpticsModel = "wog_advanced_artillery\pab-2m\2Dscope_pab_2m.p3d";
+						gunnerOpticsEffect[] = {"OpticsCHAbera1","OpticsBlur2"};
+						initAngleX = 0;
+						initAngleY = 0;
+						initFov = 0.053;
+						maxAngleX = 30;
+						maxAngleY = 100;
+						maxFov = 0.053;
+						maxMoveX = 0;
+						maxMoveY = 0;
+						maxMoveZ = 0;
+						minAngleX = -30;
+						minAngleY = -100;
+						minFov = 0.053;
+						minMoveX = 0;
+						minMoveY = 0;
+						minMoveZ = 0;
+						opticsDisplayName = "";
+						visionMode[] = {"Normal"};
+					};
+					class FrontView: MainOptics
+					{
+						gunnerOpticsModel = "\A3\weapons_f\reticle\optics_empty";
+						gunnerOpticsEffect[] = {};
+						camPos = "gunnerview2";
+						initAngleX = 0;
+						minAngleX = -60;
+						maxAngleX = 30;
+						initAngleY = 0;
+						minAngleY = -100;
+						maxAngleY = 100;
+						initFov = 0.75;
+						minFov = 0.75;
+						maxFov = 0.75;
+					};
+					class CompassView: FrontView
+					{
+						camPos = "gunnerview3";
+						camDir = "gunnerview3_dir";
+					};
+				};
+		
+				weapons[] = {"wog_weap_pab_2m"};
+				magazines[] = {};
+				optics = 1;
+				elevationMode = 1;
+				maxHorizontalRotSpeed = 0.5;
+				gunnerOpticsColor[] = {1,1,1,1};
+				gunnerOpticsModel = "wog_advanced_artillery\pab-2m\2Dscope_pab_2m.p3d";
+				gunnerOpticsEffect[] = {};
+				gunnerOutOpticsShowCursor = 0;
+				gunnerOpticsShowCursor = 0;
+				gunnerAction = "wog_pab_2m_gunner";
+				gunnerGetInAction = "";
+				gunnerGetOutAction = "";
+				gunnerForceOptics = 0;
+				ejectDeadGunner = 1;
+				turretInfoType = "";
+				opticsDisablePeripherialVision = 1;
+			};
+		};
+		
+		class ACE_Actions: ACE_Actions
+		{
+			class ACE_MainActions: ACE_MainActions
+			{
+				selection="action_point";
+				class WOG_pab_2m_leveling
+				{
+					selection="";
+					distance = 5;
+					displayName="$STR_WOG_advanced_artillery_pab_2m_level";
+					condition="(alive _target) && isNull (_target getVariable ['wog_pab_2m_helper_pad', objNull]) && (isNull (gunner _target))";
+					statement="[_target] call WOG_fnc_PAB_2M_leveling";
+					showDisabled=0;
+					exceptions[] = {};
+				};
+				class WOG_pab_2m_pickup
+				{
+					selection="";
+					distance = 5;
+					displayName="$STR_WOG_advanced_artillery_pab_2m_fold";
+					condition="(alive _target) && isNull (gunner _target)";
+					statement="[_target, _player] call WOG_fnc_PAB_2M_pickup";
+					showDisabled=0;
+					exceptions[] = {};
+				};
+			};
+		};
+		
+		class AnimationSources
+		{
+			class uglomer_rotation_source
+			{
+				source = "user";
+				animPeriod = 0.001000;
+				initPhase = 0;
+				minValue = -6000;
+				maxValue = 6000;
+			};
+			class base_rotation_source
+			{
+				source = "user";
+				animPeriod = 0.001000;
+				initPhase = 0;
+				minValue = -6000;
+				maxValue = 6000;
+			};
+			class compass_arrow_rotation_source
+			{
+				source = "user";
+				animPeriod = 0.001000;
+				initPhase = 0;
+				minValue = -500;
+				maxValue = 500;
+			};
+		};
+		
+		armor = 80;
+		
+		class Damage
+		{
+			tex[] = {};
+			mat[] =
+			{
+				"wog_advanced_artillery\pab-2m\data\pab-2m.rvmat",
+				"wog_advanced_artillery\pab-2m\data\pab-2m_damage.rvmat",
+				"wog_advanced_artillery\pab-2m\data\pab-2m_destruct.rvmat",
+				
+				"wog_advanced_artillery\pab-2m\data\pab-2m_tripod.rvmat",
+				"wog_advanced_artillery\pab-2m\data\pab-2m_tripod_damage.rvmat",
+				"wog_advanced_artillery\pab-2m\data\pab-2m_tripod_destruct.rvmat"
+			};
+		};
+	};
+	
 	class wog_122_ammobox: NATO_Box_Base
 	{
 		scope=2;
@@ -178,6 +519,9 @@ class CfgVehicles
 		transportMaxBackpacks = 0;
 		editorPreview="\wog_advanced_artillery\resource\data\wog_122_ammobox_editor_preview.jpg";
 		icon="\arty_ammo\data\120mm\UI\icon_box_ca.paa";
+		
+		hiddenSelections[] = {"camo1"};
+		hiddenSelectionsTextures[] = {"wog_advanced_artillery\ammobox_122\data\wog_122_ammobox_of462_decal_ca.paa"};
 		
 		class AnimationSources
 		{
@@ -294,6 +638,8 @@ class CfgVehicles
 		
 		class EventHandlers
 		{
+			class CBA_Extended_EventHandlers: CBA_Extended_EventHandlers_base {};
+			
 			class WOG_EventHandlers
 			{
 				init = "[_this, 1] spawn wog_fnc_initAmmobox";
@@ -304,9 +650,12 @@ class CfgVehicles
 	class wog_122_3bk13_ammobox: wog_122_ammobox
 	{
 		displayName="$STR_WOG_advanced_artillery_122mm_3bk13_Ammobox_displayName";
+		hiddenSelectionsTextures[] = {"wog_advanced_artillery\ammobox_122\data\wog_122_ammobox_3bk13_decal_ca.paa"};
 		
 		class EventHandlers: EventHandlers
 		{
+			class CBA_Extended_EventHandlers: CBA_Extended_EventHandlers_base {};
+			
 			class WOG_EventHandlers: WOG_EventHandlers
 			{
 				init = "[_this, 2] spawn wog_fnc_initAmmobox";
@@ -343,7 +692,7 @@ class CfgVehicles
 				selectionFireAnim = "gun_muzzle";
 				gunEnd = "gun_chamber";
 				gunBeg = "gun_muzzle";
-				turretinfotype = "";
+				turretinfotype = "wog_gui_optic_d30_op4";
 				gunnerForceOptics = 0;
 				gunnerOpticsModel = "wog_advanced_artillery\D30\2Dscope_D30_panoramic.p3d";
 				magazines[] = {};
@@ -353,6 +702,51 @@ class CfgVehicles
 					initFov = 0.106;
 					maxFov = 0.106;
 					minFov = 0.106;
+				};
+				
+				class OpticsIn
+				{
+					class PanoramicSight
+					{
+						gunnerOpticsModel = "wog_advanced_artillery\D30\2Dscope_D30_panoramic.p3d";
+						//hitpoint = "Hit_Optic_PG1M";
+						initAngleX = 0;
+						initAngleY = 0;
+						initFov = 0.106;
+						maxAngleX = 30;
+						maxAngleY = 100;
+						maxFov = 0.106;
+						maxMoveX = 0;
+						maxMoveY = 0;
+						maxMoveZ = 0;
+						minAngleX = -30;
+						minAngleY = -100;
+						minFov = 0.106;
+						minMoveX = 0;
+						minMoveY = 0;
+						minMoveZ = 0;
+						opticsDisplayName = "PG1";
+						visionMode[] = {"Normal"};
+					};
+					
+					class OP4M_45
+					{
+						opticsDisplayName 	= "OP4";
+						//hitpoint 			= "Hit_Optic_OP4M";
+						camPos				= "view_op4m";
+						camDir				= "view_op4m_dir";
+						initAngleX			= 0;
+						minAngleX			= -30;
+						maxAngleX			= 30;
+						initAngleY			= 0;
+						minAngleY			= -100;
+						maxAngleY			= 100;
+						initFov 			= 0.127273;
+						minFov 				= 0.127273;
+						maxFov 				= 0.127273;
+						visionMode[]		= {"Normal"};
+						gunnerOpticsModel	= "\rhsafrf\addons\rhs_optics\vehicles\rhs_empty.p3d";
+					};
 				};
 			};
 		};
@@ -504,7 +898,7 @@ class CfgVehicles
 				{
 					distance=5;
 					displayName="$STR_WOG_advanced_artillery_Leveling_displayName";
-					condition="(_target animationPhase 'leftT') == 0";
+					condition="(alive _target) && (_target animationPhase 'leftT') == 0";
 					statement="_player setVariable ['WOG_D30_gunObj', _target]; createDialog 'WOG_ARTY_LEVEL_D';";
 					showDisabled=0;
 					exceptions[]={};
@@ -516,8 +910,8 @@ class CfgVehicles
 				selection="action_point_handle";
 				distance=1.5;
 				displayName="$STR_WOG_advanced_artillery_Open_Breech_displayName";
-				condition="(_target animationSourcePhase 'klin_open_source') == 0";
-				statement=QUOTE(['wog_advanced_artillery_remove_mags_server_event', [_target]] call CBA_fnc_serverEvent; if ((_target animationSourcePhase 'handle_klin_open') == 0) then {_target animateSource ['handle_klin_open', 1];} else {_target animateSource ['handle_klin_open', 0];}; [{_this animateSource ['klin_open_source', 1, 0.25]}, _target, 0.6] call CBA_fnc_waitAndExecute;);
+				condition="(alive _target) && (_target animationSourcePhase 'klin_open_source') == 0";
+				statement="['wog_advanced_artillery_remove_mags_server_event', [_target]] call CBA_fnc_serverEvent; if ((_target animationSourcePhase 'handle_klin_open') == 0) then {_target animateSource ['handle_klin_open', 1];} else {_target animateSource ['handle_klin_open', 0];}; [{_this animateSource ['klin_open_source', 1, 0.25]}, _target, 0.6] call CBA_fnc_waitAndExecute;";
 				showDisabled=0;
 				exceptions[]={};
 				priority=5;
@@ -527,8 +921,8 @@ class CfgVehicles
 				selection="action_point_handle";
 				distance=1.5;
 				displayName="$STR_WOG_advanced_artillery_Close_Breech_displayName";
-				condition="(_target animationSourcePhase 'klin_open_source') == 1";
-				statement="if ((_target animationSourcePhase 'handle_klin_open') == 0) then {_target animateSource ['handle_klin_open', 1];} else {_target animateSource ['handle_klin_open', 0];}; [{_this animateSource ['klin_open_source', 0, 0.25]}, _target, 0.6] call CBA_fnc_waitAndExecute;";
+				condition="(alive _target) && (_target animationSourcePhase 'klin_open_source') == 1";
+				statement="[_target] spawn WOG_fnc_closeBreech";
 				showDisabled=0;
 				exceptions[]={};
 				priority=5;
@@ -536,7 +930,7 @@ class CfgVehicles
 			class WOG_D30_Load_Actions_Group
 			{
 				selection="action_point_loading";
-				condition="(_target animationSourcePhase 'klin_open_source') == 1";
+				condition="(alive _target) && (_target animationSourcePhase 'klin_open_source') == 1";
 				displayName = "";
                 statement = "";
                 exceptions[] = {"isNotSwimming", "isNotInside"};
@@ -549,7 +943,7 @@ class CfgVehicles
 					selection="action_point_loading";
 					distance=1.5;
 					displayName="$STR_WOG_advanced_artillery_Load_Shell_displayName";
-					condition="((_target animationSourcePhase 'klin_open_source') == 1) && ((_target animationSourcePhase 'shell_loading') == 0) && ((_target animationSourcePhase 'shell_3bk13_loading') == 0)";
+					condition="(alive _target) && ((_target animationSourcePhase 'klin_open_source') == 1) && ((_target animationSourcePhase 'shell_loading') == 0) && ((_target animationSourcePhase 'shell_3bk13_loading') == 0)";
 					statement="[_target, 1] spawn wog_fnc_load_d30";
 					showDisabled=0;
 					exceptions[]={};
@@ -561,7 +955,7 @@ class CfgVehicles
 					selection="action_point_loading";
 					distance=1.5;
 					displayName="$STR_WOG_advanced_artillery_Unload_Shell_displayName";
-					condition="((_target animationSourcePhase 'klin_open_source') == 1) && (((_target animationSourcePhase 'shell_loading') == 1) || ((_target animationSourcePhase 'shell_3bk13_loading') == 1)) && ((_target animationSourcePhase 'casing_loading') == 0)";
+					condition="(alive _target) && ((_target animationSourcePhase 'klin_open_source') == 1) && (((_target animationSourcePhase 'shell_loading') == 1) || ((_target animationSourcePhase 'shell_3bk13_loading') == 1)) && ((_target animationSourcePhase 'casing_loading') == 0)";
 					statement="[_target, 3] spawn wog_fnc_load_d30";
 					showDisabled=0;
 					exceptions[]={};
@@ -573,7 +967,7 @@ class CfgVehicles
 					selection="action_point_loading";
 					distance=1.5;
 					displayName="$STR_WOG_advanced_artillery_Load_Casing_displayName";
-					condition="((_target animationSourcePhase 'klin_open_source') == 1) && ((_target animationSourcePhase 'casing_loading') == 0) && (((_target animationSourcePhase 'shell_loading') == 1) || ((_target animationSourcePhase 'shell_3bk13_loading') == 1))";
+					condition="(alive _target) && ((_target animationSourcePhase 'klin_open_source') == 1) && ((_target animationSourcePhase 'casing_loading') == 0) && (((_target animationSourcePhase 'shell_loading') == 1) || ((_target animationSourcePhase 'shell_3bk13_loading') == 1))";
 					statement="[_target, 2] spawn wog_fnc_load_d30";
 					showDisabled=0;
 					exceptions[]={};
@@ -585,7 +979,7 @@ class CfgVehicles
 					selection="action_point_loading";
 					distance=1.5;
 					displayName="$STR_WOG_advanced_artillery_Unload_Casing_displayName";
-					condition="((_target animationSourcePhase 'klin_open_source') == 1) && ((_target animationSourcePhase 'casing_loading') == 1) && (((_target animationSourcePhase 'shell_loading') == 1) || ((_target animationSourcePhase 'shell_3bk13_loading') == 1))";
+					condition="(alive _target) && ((_target animationSourcePhase 'klin_open_source') == 1) && ((_target animationSourcePhase 'casing_loading') == 1) && (((_target animationSourcePhase 'shell_loading') == 1) || ((_target animationSourcePhase 'shell_3bk13_loading') == 1))";
 					statement="[_target, 4] spawn wog_fnc_load_d30";
 					showDisabled=0;
 					exceptions[]={};
@@ -598,27 +992,31 @@ class CfgVehicles
 				selection="slingloadcargo3";
 				distance=2.5;
 				displayName="$STR_WOG_advanced_artillery_Towing_Attach_displayName";
-				condition="[_target] call WOG_fnc_D30_can_towing";
+				condition="(alive _target) && ([_target] call WOG_fnc_D30_can_towing)";
 				statement="[_target, 0] spawn WOG_fnc_D30_towing";
 				showDisabled=0;
 				exceptions[]={};
 				priority=5;
+				icon = "\rhsafrf\addons\rhs_main\data\actions\rhs_tow_attach_ca.paa";
 			};
 			class WOG_D30_Towing_Detach_Action
 			{
 				selection="slingloadcargo3";
 				distance=2.5;
 				displayName="$STR_WOG_advanced_artillery_Towing_Detach_displayName";
-				condition="_target getVariable ['WOG_D30_isTowed', false]";
+				condition="(alive _target) && (_target getVariable ['WOG_D30_isTowed', false])";
 				statement="[_target, 1] spawn WOG_fnc_D30_towing";
 				showDisabled=0;
 				exceptions[]={};
 				priority=5;
+				icon = "\rhsafrf\addons\rhs_main\data\actions\rhs_tow_detach_ca.paa";
 			};
 		};
 		
 		class EventHandlers: EventHandlers
 		{
+			class CBA_Extended_EventHandlers: CBA_Extended_EventHandlers_base {};
+			
 			class RHS_EventHandlers: RHS_EventHandlers
 			{
 				fired = "_this spawn wog_fnc_fired_d30";
@@ -778,6 +1176,8 @@ class CfgVehicles
 		
 		class EventHandlers
 		{
+			class CBA_Extended_EventHandlers: CBA_Extended_EventHandlers_base {};
+			
 			class WOG_EventHandlers
 			{
 				init = "_this spawn wog_fnc_init_casing";
@@ -795,6 +1195,13 @@ class Extended_GetIn_Eventhandlers
 			GetIn = "_this call WOG_fnc_D30_getIn_EH";
 		};
 	};
+	class wog_pab_2m
+	{
+		class wog_pab_2m_getIn
+		{
+			GetIn = "_this call WOG_fnc_D30_getIn_EH";
+		};
+	};
 };
 
 class Extended_GetOut_Eventhandlers
@@ -802,6 +1209,13 @@ class Extended_GetOut_Eventhandlers
 	class wog_D30_base
 	{
 		class wog_D30_base_getOut
+		{
+			GetOut = "_this call WOG_fnc_D30_getOut_EH";
+		};
+	};
+	class wog_pab_2m
+	{
+		class wog_pab_2m_getOut
 		{
 			GetOut = "_this call WOG_fnc_D30_getOut_EH";
 		};

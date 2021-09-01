@@ -257,12 +257,24 @@ class WOG_ARTY_LEVEL_D {
 		class WOG_Arty_RscButton_1601: WOG_Arty_RscButton
 		{
 			idc = 3601;
-			text = "Закрыть";
+			text = "$STR_WOG_advanced_artillery_Close_displayName";
 			x = 25.5 * WOG_ARTY_GUI_GRID_W + WOG_ARTY_GUI_GRID_X;
 			y = 13 * WOG_ARTY_GUI_GRID_H + WOG_ARTY_GUI_GRID_Y;
 			w = 6 * WOG_ARTY_GUI_GRID_W;
 			h = 2 * WOG_ARTY_GUI_GRID_H;
 			onMouseButtonClick = "closeDialog 2;";
+		};
+		class WOG_Arty_RscButton_1602: WOG_Arty_RscButton
+		{
+			idc = 3602;
+			style = 0;
+			text = "$STR_WOG_advanced_artillery_Fix_Floating_displayName";
+			x = 6.5 * WOG_ARTY_GUI_GRID_W + WOG_ARTY_GUI_GRID_X;
+			y = 13 * WOG_ARTY_GUI_GRID_H + WOG_ARTY_GUI_GRID_Y;
+			w = 11 * WOG_ARTY_GUI_GRID_W;
+			h = 2 * WOG_ARTY_GUI_GRID_H;
+			colorText[]={0.7,0.7,0,1};
+			onMouseButtonClick = "[player getVariable 'WOG_D30_gunObj', [0,0,0.5]] remoteExecCall ['setVelocity', player getVariable 'WOG_D30_gunObj']";
 		};
 	};
 };
@@ -273,7 +285,7 @@ class RscTitles
 	{
 		idd = -1;
 		//idd = 9002;
-		duration = 1e+1000;
+		duration = 1e+010;
 		movingenable = false;
 
 		fadeIn = 0; 

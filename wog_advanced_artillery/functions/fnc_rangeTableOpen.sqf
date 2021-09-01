@@ -33,7 +33,7 @@ if ((count _magazines) < 1) exitWith {hint "No Magazines for weapon";};
 
 _index = 0;
 {
-	LIST_CHARGE lbAdd format [localize "STR_WOG_advanced_artillery_Charges_RangeTable_displayName", getText (configFile >> "CfgMagazines" >> _x >> "displayName")];
+	LIST_CHARGE lbAdd format ["%1", getText (configFile >> "CfgMagazines" >> _x >> "displayName")];
 	LIST_CHARGE lbSetData [_index, str (getNumber (configFile >> "CfgMagazines" >> _x >> "initSpeed"))];
 	_index = _index + 1;
 } forEach _magazines;

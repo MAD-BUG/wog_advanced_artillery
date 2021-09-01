@@ -91,7 +91,6 @@
 
 class WOG_Arty_RscCombo
 {
-	access = 0;
 	type = 4;
 	colorSelect[] = {0,0,0,1};
 	colorText[] = {0.95,0.95,0.95,1};
@@ -143,7 +142,6 @@ class WOG_Arty_RscCombo
 
 class WOG_Arty_RscText
 {
-	access = 0;
 	type = 0;
 	idc = -1;
 	colorBackground[] = {0,0,0,0};
@@ -164,7 +162,6 @@ class WOG_Arty_RscText
 
 class WOG_Arty_RscSlider
 {
-	access = 0;
 	type = 3;
 	style = 1024;
 	w = 0.3;
@@ -176,7 +173,6 @@ class WOG_Arty_RscSlider
 
 class WOG_Arty_RscButton
 {
-	access = 0;
 	type = 1;
 	text = "";
 	colorText[] = {1,1,1,1};
@@ -246,7 +242,6 @@ class WOG_Arty_RscButton
 
 class WOG_Arty_RscPicture
 {
-	access = 0;
 	type = 0;
 	idc = -1;
 	style = 48;
