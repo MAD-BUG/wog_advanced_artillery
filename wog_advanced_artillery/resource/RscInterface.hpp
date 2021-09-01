@@ -285,7 +285,7 @@ class RscTitles
 	{
 		idd = -1;
 		//idd = 9002;
-		duration = 1e+1000;
+		duration = 1e+010;
 		movingenable = false;
 
 		fadeIn = 0; 
