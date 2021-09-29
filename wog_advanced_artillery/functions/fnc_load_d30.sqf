@@ -23,6 +23,7 @@ switch (_type) do
 			case "wog_mag_3bk13_dummy": {_gun animateSource ['shell_3bk13_loading', 1];};
 		};
 		player playAction "PutDown";
+		[{playSound3D ["wog_advanced_artillery\sounds\load_shell.wss", _this, false, AGLToASL (_this modelToWorld (_this selectionPosition "ejector_pos")), 3, 1, 35]}, _gun, 0.05] call CBA_fnc_waitAndExecute;
 	};
 
 	case 2:
@@ -40,6 +41,7 @@ switch (_type) do
 		player playAction "PutDown";
 		_gun animateSource ['casing_loading', 1];
 		[{_this animateSource ['klin_open_source', 0]}, _gun, 0.55] call CBA_fnc_waitAndExecute;
+		[{playSound3D ["wog_advanced_artillery\sounds\load_shell.wss", _this, false, AGLToASL (_this modelToWorld (_this selectionPosition "ejector_pos")), 3, 1, 35]}, _gun, 0] call CBA_fnc_waitAndExecute;
 		[{playSound3D ["wog_advanced_artillery\sounds\load_gun.wss", _this, false, AGLToASL (_this modelToWorld (_this selectionPosition "ejector_pos")), 3, 1, 35]}, _gun, 0.25] call CBA_fnc_waitAndExecute;
 		waitUntil {(_gun animationSourcePhase "casing_loading") == 1};
 		['wog_advanced_artillery_remove_mags_server_event', [_gun]] call CBA_fnc_serverEvent;
