@@ -394,17 +394,20 @@ class CfgVehicles
 						initAngleX = 0;
 						minAngleX = -60;
 						maxAngleX = 30;
-						initAngleY = 0;
-						minAngleY = -100;
-						maxAngleY = 100;
-						initFov = 0.75;
-						minFov = 0.75;
-						maxFov = 0.75;
+						initAngleY = 10;
+						minAngleY = 10;
+						maxAngleY = 10;
+						initFov = 0.43; //0.75
+						minFov = 0.43;
+						maxFov = 0.43;
 					};
 					class CompassView: FrontView
 					{
 						camPos = "gunnerview3";
 						camDir = "gunnerview3_dir";
+						initFov = 0.75;
+						minFov = 0.75;
+						maxFov = 0.75;
 					};
 				};
 		
