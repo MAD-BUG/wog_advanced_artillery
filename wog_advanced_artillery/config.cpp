@@ -129,6 +129,7 @@ class CfgWeapons
 		class Single5: Single5
 		{
 			displayName = "";
+			dispersion = 0.0028;
 		};
 
 		magazines[] =
