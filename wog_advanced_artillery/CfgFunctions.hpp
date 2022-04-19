@@ -152,6 +152,66 @@ class CfgFunctions
 				file = "wog_advanced_artillery\functions\fnc_closeBreech.sqf";
 				recompile = 0;
 			};
+			class apost_toggle_light
+			{
+				file = "wog_advanced_artillery\functions\aimingpoints\fnc_apost_toggle_light.sqf";
+				recompile = 0;
+			};
+			class apost_move_light
+			{
+				file = "wog_advanced_artillery\functions\aimingpoints\fnc_apost_move_light.sqf";
+				recompile = 0;
+			};
+			class collim_adjust_sight
+			{
+				file = "wog_advanced_artillery\functions\aimingpoints\fnc_collim_adjust_sight.sqf";
+				recompile = 1;
+			};
+			class collim_toggle_light
+			{
+				file = "wog_advanced_artillery\functions\aimingpoints\fnc_collim_toggle_light.sqf";
+				recompile = 1;
+			};
+			class collim_handler
+			{
+				file = "wog_advanced_artillery\functions\aimingpoints\fnc_collim_handler.sqf";
+				recompile = 1;
+			};
+			class collim_addKeys
+			{
+				file = "wog_advanced_artillery\functions\aimingpoints\fnc_collim_addKeys.sqf";
+				recompile = 1;
+			};
+			class collim_removeKeys
+			{
+				file = "wog_advanced_artillery\functions\aimingpoints\fnc_collim_removeKeys.sqf";
+				recompile = 1;
+			};
+			class collim_keyEvent
+			{
+				file = "wog_advanced_artillery\functions\aimingpoints\fnc_collim_keyEvent.sqf";
+				recompile = 1;
+			};
+			class aimingpoints_place
+			{
+				file = "wog_advanced_artillery\functions\aimingpoints\fnc_aimingpoints_place.sqf";
+				recompile = 1;
+			};
+			class aimingpoints_pickup
+			{
+				file = "wog_advanced_artillery\functions\aimingpoints\fnc_aimingpoints_pickup.sqf";
+				recompile = 1;
+			};
+			class apost_getDistanceToClosest
+			{
+				file = "wog_advanced_artillery\functions\aimingpoints\fnc_apost_getDistanceToClosest.sqf";
+				recompile = 1;
+			};
+			class apost_digging
+			{
+				file = "wog_advanced_artillery\functions\aimingpoints\fnc_apost_digging.sqf";
+				recompile = 1;
+			};
 		};
 	};
 };

@@ -1,0 +1,18 @@
+class StageTI
+{
+    texture="a3\data_f\default_ti_ca.paa";
+};
+ambient[]={0.5,0.75,0.5,1};
+diffuse[]={0.5,0.75,0.5,1};
+forcedDiffuse[]={0.98000002,1,0.98000002,1};
+emmisive[]={65,110,65,1};
+specular[]={1,1,0.99999988,1};
+specularPower=500;
+
+PixelShaderID="Collimator";
+VertexShaderID="Basic";
+
+    class Stage0
+    {
+      uvSource="texCollimator";
+    };

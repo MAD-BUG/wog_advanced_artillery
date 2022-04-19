@@ -20,6 +20,14 @@ if (typeOf (_this select 0) == "wog_pab_2m") then
 	showCompass true;
 	player enableInfoPanelComponent ["left", "MinimapDisplayComponent", true];
 	player enableInfoPanelComponent ["right", "MinimapDisplayComponent", true];
+	
+	{
+		_collimatorProxy = _x getVariable "ace_collimator_proxy";
+		detach _collimatorProxy;
+		deleteVehicle _collimatorProxy;
+	} forEach ACE_ARTY_COLLIMATORS;
+	[player getVariable "wog_advanced_artillery_collimatorPFH"] call CBA_fnc_removePerFrameHandler;
+	ACE_ARTY_COLLIMATORS = [];
 };
 if !(isNull(uiNamespace getVariable ["wog_d30_sight_gui", displayNull])) then
 {

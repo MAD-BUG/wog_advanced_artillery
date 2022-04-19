@@ -1,8 +1,8 @@
 class CfgPatches {
 	class wog_advanced_artillery {
         name = "WOG Advanced Artillery";
-        units[] = {};
-        weapons[] = {"WOG_RangeTable_D30"};
+        units[] = {"Item_Arty_AimingPost", "acex_artillery_Collimator_Item"};
+        weapons[] = {"WOG_RangeTable_D30", "acex_artillery_AimingPost", "acex_artillery_Collimator"};
         requiredVersion = 1.60;
         requiredAddons[] = {"a3_weapons_f", "ace_interaction", "rhs_c_heavyweapons", "A3_Static_F_Mortar_01", "ruPal_RHS_to_ACE", "rhsgref_c_vehicles_ret", "ace_spottingscope", "rhs_main", "ace_maptools"};
         author = "Lex";
@@ -76,6 +76,14 @@ class WOG_D30_Fired
 	};
 };
 
+class CfgVehicleClasses
+{
+    class acex_artillery_System
+	{
+        displayName = "ACEX ARTILLERY Vehicles";
+    };
+};
+
 class CfgWeapons
 {
 	class CannonCore;
@@ -140,8 +148,11 @@ class CfgWeapons
 		displayName = "$STR_WOG_advanced_artillery_pab_2m_displayName";
 	};
 	
+	class ItemCore;
 	class ACE_ItemCore;
 	class CBA_MiscItem_ItemInfo;
+	class InventoryItem_Base_F;
+	
 	class WOG_RangeTable_D30: ACE_ItemCore
 	{
 		scope=2;
@@ -153,6 +164,41 @@ class CfgWeapons
 			mass=0.5;
 		};
 	};
+    
+    class acex_artillery_AimingPost: ACE_ItemCore
+	{
+        scope = 2;
+        displayName = "$STR_WOG_advanced_artillery_aimingpoints_aiming_post";
+        author = "$STR_ACE_Common_ACETeam";
+
+        model = "\wog_advanced_artillery\aimingpoints\arty_aimingpost_equip_f.p3d";
+        icon = "\wog_advanced_artillery\aimingpoints\data\ui\map_aimingpost_ca.paa";
+        picture = "\wog_advanced_artillery\aimingpoints\data\ui\aimingpost_equip_ca.paa";
+
+        class ItemInfo: CBA_MiscItem_ItemInfo
+		{
+            mass = 50;
+            //uniformModel = "wog_advanced_artillery\aimingpoints\arty_aimingpost_equip_f.p3d";
+			//allowedSlots[] = {901};
+			//type = 0;
+        };
+    };
+
+    class acex_artillery_Collimator: ACE_ItemCore
+	{
+        scope = 2;
+        displayName = "$STR_WOG_advanced_artillery_aimingpoints_artillery_collimator";
+        author = "$STR_ACE_Common_ACETeam";
+        
+        model = "\wog_advanced_artillery\aimingpoints\arty_collimator_equip_f.p3d";
+        icon = "\wog_advanced_artillery\aimingpoints\data\ui\map_collimator_ca.paa";
+        picture = "\wog_advanced_artillery\aimingpoints\data\ui\collimator_equip_ca.paa";
+
+        class ItemInfo: CBA_MiscItem_ItemInfo
+		{
+            mass = 50;
+        };
+    };
 };
 
 class CBA_Extended_EventHandlers_base;
@@ -194,6 +240,24 @@ class CfgVehicles
                     statement = "[_player, 'WOG_pab_2m_bag'] call WOG_fnc_PAB_2M_place";
                     showDisabled = 0;
                     icon = "wog_advanced_artillery\pab-2m\data\w_pab_2m_icon.paa";
+                };
+				
+				class WOG_aiming_post_place
+				{
+                    displayName = "$STR_WOG_advanced_artillery_aimingpoints_setup_aimingpost";
+                    condition = "'acex_artillery_AimingPost' in (items _player)";
+                    statement = "[_player, 'acex_artillery_AimingPost'] call wog_fnc_aimingpoints_place";
+                    showDisabled = 0;
+                    icon = "wog_advanced_artillery\aimingpoints\data\ui\aimingpost_equip_ca.paa";
+                };
+				
+				class WOG_collimator_place
+				{
+                    displayName = "$STR_WOG_advanced_artillery_aimingpoints_setup_collimator";
+                    condition = "'acex_artillery_Collimator' in (items _player)";
+                    statement = "[_player, 'acex_artillery_Collimator'] call wog_fnc_aimingpoints_place";
+                    showDisabled = 0;
+                    icon = "wog_advanced_artillery\aimingpoints\data\ui\collimator_equip_ca.paa";
                 };
 			};
 			
@@ -505,6 +569,375 @@ class CfgVehicles
 		};
 	};
 	
+	class Item_Base_F;
+	class Item_Arty_AimingPost: Item_Base_F
+    {
+        scope = 2;
+        scopeCurator = 2;
+        displayName = "$STR_WOG_advanced_artillery_aimingpoints_aiming_post";
+        author = "$STR_ACE_Common_ACETeam";
+		model = "wog_advanced_artillery\aimingpoints\arty_aimingpost_equip_f.p3d";
+        icon = "wog_advanced_artillery\aimingpoints\data\ui\map_aimingpost_ca.paa";
+        picture = "wog_advanced_artillery\aimingpoints\data\ui\aimingpost_equip_ca.paa";
+        vehicleClass = "acex_artillery_System";
+
+        class TransportItems
+		{
+			class _xx_acex_artillery_AimingPost
+			{
+				name = "acex_artillery_AimingPost";
+				count = 1;
+			};
+        };
+    };
+	
+	class acex_artillery_Collimator_Item: Item_Base_F
+	{
+        scope = 2;
+        scopeCurator = 2;
+        displayName = "$STR_WOG_advanced_artillery_aimingpoints_artillery_collimator";
+        author = "$STR_ACE_Common_ACETeam";
+        model = "wog_advanced_artillery\aimingpoints\Arty_Collimator_Equip_F.p3d";
+        icon = "wog_advanced_artillery\aimingpoints\data\ui\map_collimator_ca.paa";
+        picture = "wog_advanced_artillery\aimingpoints\data\ui\collimator_equip_ca.paa";
+        vehicleClass = "acex_artillery_System";
+        class TransportItems
+		{
+			class _xx_acex_artillery_Collimator
+			{
+				name = "acex_artillery_Collimator";
+				count = 1;
+			};
+        };
+    };
+	
+	class NonStrategic;
+	
+	class acex_artillery_AimingPost_F: NonStrategic {
+		
+		class EventHandlers
+		{
+			class CBA_Extended_EventHandlers: CBA_Extended_EventHandlers_base {};
+			class WOG_EventHandlers
+			{
+				init = "[_this select 0] spawn ace_dragging_fnc_initObject";
+			};
+		};
+		
+        scope = 2;
+        scopeCurator = 2;
+        displayName = "$STR_WOG_advanced_artillery_aimingpoints_aiming_post";
+        author = "$STR_ACE_Common_ACETeam";
+        vehicleClass = "acex_artillery_System";
+
+        model="wog_advanced_artillery\aimingpoints\arty_aimingpost_F.p3d";
+        icon="wog_advanced_artillery\aimingpoints\data\ui\map_aimingpost_ca.paa";
+        picture="wog_advanced_artillery\aimingpoints\data\ui\aimingpost_equip_ca.paa";
+		
+		ace_dragging_canCarry = 1;  // Can be carried (0-no, 1-yes)
+        ace_dragging_carryPosition[] = {0, 1, 1};  // Offset of the model from the body while dragging (same as attachTo) (default: [0, 1, 1])
+        ace_dragging_carryDirection = 0;
+
+        class AnimationSources
+        {
+            class move_post_light {
+                source = "user";
+                animPeriod = 2.00;
+                initPhase = 0;
+            };
+            class show_post_light {
+                source = "user";
+                animPeriod = 0.5;
+                initPhase = 1;
+            };
+            class light_base {
+                animPeriod = 0;
+                initPhase = 0;
+                minValue = 0;
+                maxValue = 2;
+            };
+            class light_mode {
+                source = "user";
+                animPeriod = 0;
+                initPhase = 0;
+                minValue = 0;
+                maxValue = 2;
+            };
+        };
+        class ACE_Actions
+		{
+			class ACE_MainActions
+			{
+				displayName = "$STR_ACE_Interaction_MainAction";
+                selection = "pos_height";
+                distance = 5;
+                condition = "true";
+				
+				class ACE_AimingPost_Leveling
+				{
+					displayName="$STR_WOG_advanced_artillery_pab_2m_level";
+					distance = 2;
+					condition = "_target == _target";
+					statement = "[_target, [0,0,1]] remoteExec ['setVectorUp', _target]";
+					showDisabled = 0;
+					icon = "a3\3den\data\displays\display3den\toolbar\snap_on_ca.paa";
+				};
+				
+				class ACE_AimingPost_Pickup
+				{
+					displayName="$STR_WOG_advanced_artillery_pab_2m_fold";
+					distance = 2;
+					condition = "alive _target";
+					statement = "[_target, _player, 'Item_Arty_AimingPost'] call wog_fnc_aimingpoints_pickup";
+					showDisabled = 0;
+				};
+				
+				class ACE_Aimingpost_Move
+				{
+					displayName="$STR_WOG_advanced_artillery_aimingpoints_move_post_light";
+					distance = 2;
+					condition = "(_target animationPhase 'show_post_light' == 1)";
+					statement = "[_target] call WOG_fnc_apost_move_light";
+					showDisabled = 0;
+					//selection = "pos_height";
+				};
+				class ACE_Aimingpost_GetDistance
+				{
+					displayName="$STR_WOG_advanced_artillery_aimingpoints_apost_getDistance";
+					distance = 2;
+					condition = "true";
+					statement = "[_target] call wog_fnc_apost_getDistanceToClosest;";
+					showDisabled = 0;
+					//selection = "pos_height";
+				};
+				class ACE_Aimingpost_digging
+				{
+					displayName="$STR_WOG_advanced_artillery_aimingpoints_apost_digging";
+					distance = 2;
+					condition = "true";
+					statement = "[_target] call wog_fnc_apost_digging;";
+					showDisabled = 0;
+					//selection = "pos_height";
+				};
+			};
+
+			class ACE_Aimingpost_Light
+			{
+				displayName="$STR_WOG_advanced_artillery_aimingpoints_toggle_light";
+				distance = 2;
+				condition = "(_target animationPhase 'show_post_light' == 1)";
+				statement = "[_target] call WOG_fnc_apost_toggle_light";
+				showDisabled = 0;
+				selection = "pos_light";
+			};
+        };
+    };
+	
+	class ThingX;
+	
+	class acex_artillery_Collimator_F: ThingX {
+        
+		class EventHandlers
+		{
+			class CBA_Extended_EventHandlers: CBA_Extended_EventHandlers_base {};
+		};
+		
+        scope = 2;
+        scopeCurator = 2;
+        displayName = "$STR_WOG_advanced_artillery_aimingpoints_artillery_collimator";
+        author = "$STR_ACE_Common_ACETeam";
+		simulation = "house";
+        model="wog_advanced_artillery\aimingpoints\Arty_Collimator_F.p3d";
+        icon="wog_advanced_artillery\aimingpoints\data\ui\map_collimator_ca.paa";
+        picture="wog_advanced_artillery\aimingpoints\data\ui\collimator_equip_ca.paa";
+        vehicleClass = "acex_artillery_System";
+		ace_dragging_canCarry = 1;  // Can be carried (0-no, 1-yes)
+        ace_dragging_carryPosition[] = {0, 1, 1};  // Offset of the model from the body while dragging (same as attachTo) (default: [0, 1, 1])
+        ace_dragging_carryDirection = 180;
+
+        class ACE_Actions
+		{
+			class ACE_MainActions
+			{
+				displayName = "$STR_ACE_Interaction_MainAction";
+                selection = "";
+                distance = 5;
+                condition = "true";
+				
+				class ACE_Collimator_Leveling
+				{
+					displayName="$STR_WOG_advanced_artillery_pab_2m_level";
+					distance = 2;
+					condition = "alive _target";
+					statement = "[_target, [0,0,1]] remoteExec ['setVectorUp', _target]";
+					showDisabled = 0;
+					icon = "a3\3den\data\displays\display3den\toolbar\snap_on_ca.paa";
+					//selection = "action_adjust";
+				};
+				class ACE_Collimator_Pickup
+				{
+					displayName="$STR_WOG_advanced_artillery_pab_2m_fold";
+					distance = 2;
+					condition = "alive _target";
+					statement = "[_target, _player, 'acex_artillery_Collimator_Item'] call wog_fnc_aimingpoints_pickup";
+					showDisabled = 0;
+				};
+			};
+            class ACE_Collimator_Adjust
+			{
+                displayName="$STR_WOG_advanced_artillery_aimingpoints_adjust_collimator";
+                distance = 1.25;
+                condition = "_target == _target";
+                statement = "[_target] call WOG_fnc_collim_adjust_sight";
+                showDisabled = 0;
+                selection = "action_adjust";
+            };
+			class ACE_Collimator_Toggle_Light
+			{
+                displayName="$STR_WOG_advanced_artillery_aimingpoints_toggle_light";
+                distance = 1.25;
+                condition = "_target == _target";
+                statement = "[_target] call WOG_fnc_collim_toggle_light";
+                showDisabled = 0;
+                selection = "glass_dir";
+            };
+        };
+
+        class AnimationSources {
+            class illuminate {
+                // Do Not Use In Script - Use 'collimator_illuminate'
+                source = "user";
+                animPeriod=0;
+                initPhase=0;
+                minValue=-0;
+                maxValue=2;
+            };
+            class expand {
+                // Do Not Use In Script - Use 'collimator_size'
+                source = "user";
+                animPeriod=0;
+                initPhase=0;
+                minValue=-0;
+                maxValue=1;
+            };
+            class collimator_illuminate {
+                displayName = "Collimator Back-light";
+                source = "user";
+                animPeriod = 0.01;
+                minValue = 0;
+                maxValue = 2;
+                initPhase = 0;
+            };
+            class collimator_size {
+                displayName = "Collimator Reticule Size";
+                source = "user";
+                animPeriod = 1.0;
+                initPhase = 0;
+                minValue = 0;
+                maxValue = 1;
+            };
+            class collimator_offset {
+                displayName = "Collimator Offset";
+                source="user";
+                animPeriod=0.01;
+                initPhase = 0;
+                minValue = -1;
+                maxValue = 1;
+            };
+            class collimator_rotation {
+                // Animation phase loops through rad -360/+360
+                displayName = "Collimator Rotation";
+                source = "user";
+                animPeriod = 0.01;
+                initPhase = 0;
+                minValue = "-6400";
+                maxValue = "6400";
+            };
+            class collimator_elevation {
+                // Animation phase 0-1 Loops through rad -90/+30
+                displayName = "Collimator Elevation";
+                source = "user";
+                animPeriod = 0.01;
+                initPhase = 0;
+                minValue = "-300";
+                maxValue = "300";
+            };
+            class fold_legs {
+                displayName = "Fold Collimator Legs";
+                source = "user";
+                animPeriod = 1;
+                initPhase = 0;
+            };
+            class foot_01 {
+                displayName = "Extend Collimator Leg 1";
+                source = "user";
+                animPeriod = 0;
+                initPhase = 0;
+            };
+            class foot_02: foot_01 {
+                displayName = "Extend Collimator Leg 2";
+            };
+            class foot_03: foot_01 {
+                displayName = "Extend Collimator Leg 3";
+            };
+        };
+    };
+	
+	class ACE_Arty_Collimator_Proxy: ThingX { // No idea wether this should be hidden or not
+		scope = 1;
+		displayName = "Collimator Proxy";
+		//destrType = "DestructTree";
+		//weight = 1000;
+		//simulation = "house";
+		model = "wog_advanced_artillery\aimingpoints\collimator_test.p3d";
+		//animated = 1;
+		//reversed = 0;
+		//autocenter = 0;
+		//sectionsInherit = "collimator_test";
+		hiddenSelections[] = {"pattern"};
+		hiddenSelectionsTextures[] = {"wog_advanced_artillery\aimingpoints\data\collimator_pattern_ca.paa"};
+
+		class AnimationSources{
+			class offset {
+				source = "user";
+				animPeriod = 0.00001;
+				minValue = -100;
+				maxValue = 100;
+			};
+			class expand_ul {
+				source = "user";
+				animPeriod = 0.00001;
+				minValue = 1;
+				maxValue = -1;
+			};
+			class expand_ur {
+				source = "user";
+				animPeriod = 0.00001;
+				minValue = 1;
+				maxValue = -1;
+			};
+			class expand_ll {
+				source = "user";
+				animPeriod = 0.00001;
+				minValue = 1;
+				maxValue = -1;
+			};
+			class expand_lr {
+				source = "user";
+				animPeriod = 0.00001;
+				minValue = 1;
+				maxValue = -1;
+			};
+			class alpha_hide {
+				source = "user";
+				animPeriod = 0.00001;
+				minValue = 0;
+				maxValue = 1;
+				initPhase = 0;
+			};
+		};
+	};
+	
 	class wog_122_ammobox: NATO_Box_Base
 	{
 		scope=2;
@@ -766,6 +1199,16 @@ class CfgVehicles
 				name = "ACE_Maptools";
 				count = 3;
 			};
+			class _xx_acex_artillery_AimingPost
+			{
+				name = "acex_artillery_AimingPost";
+				count = 2;
+			};
+			class _xx_acex_artillery_Collimator
+			{
+				name = "acex_artillery_Collimator";
+				count = 1;
+			};
 		};
 		
 		class AnimationSources: AnimationSources
@@ -906,6 +1349,7 @@ class CfgVehicles
 					showDisabled=0;
 					exceptions[]={};
 					priority=5;
+					icon = "a3\3den\data\displays\display3den\toolbar\snap_on_ca.paa";
 				};
 			};
 			class WOG_D30_Open_Breech_Action

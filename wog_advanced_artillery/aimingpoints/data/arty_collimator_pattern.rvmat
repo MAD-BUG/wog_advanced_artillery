@@ -1,0 +1,14 @@
+ambient[]={0.5,0.5,0.5,1};
+diffuse[]={0,0,0,1};
+forcedDiffuse[]={0,0,0,1};
+emmisive[]={0,0,0,1};
+specular[]={0,0,0,1};
+specularPower=8;
+
+PixelShaderID="Collimator";
+VertexShaderID="Basic";
+
+    class Stage0
+    {
+      uvSource="texCollimator";
+    };

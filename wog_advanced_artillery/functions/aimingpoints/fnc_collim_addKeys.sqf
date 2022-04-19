@@ -1,0 +1,2 @@
+acex_aimingpoints_key_dn = (findDisplay 46) displayAddEventHandler["KeyDown", '["KeyDown", _this] call wog_fnc_collim_keyEvent'];
+//acex_aimingpoints_key_up = (findDisplay 46) displayAddEventHandler["KeyUp", '["KeyUp", _this] call FUNC(keyEvent)'];

@@ -40,5 +40,12 @@ if (typeOf (_this select 0) == "wog_pab_2m") then
 		if (ace_microdagr_currentShowMode != 0) then {[0] call ace_microdagr_fnc_openDisplay;};
 	}, 0] call CBA_fnc_addPerFrameHandler;
 	player setVariable ["wog_advanced_artillery_compassPFH", _compassPFH];
+	
+	//Collimator's PFH
+	ACE_ARTY_COLLIMATORS = [];
+	private _collimatorPFH = [{
+		[] call wog_fnc_collim_handler;
+	}, 0.1] call CBA_fnc_addPerFrameHandler;
+	player setVariable ["wog_advanced_artillery_collimatorPFH", _collimatorPFH];
 };
 player setVariable ["wog_advanced_artillery_gunner_handle", _handle];

@@ -369,4 +369,53 @@
 			</Key>
 		</Container>
 	</Package>
+	<Package name="Aiming_points">
+		<Container name="Names">
+			<Key ID="STR_WOG_advanced_artillery_aimingpoints_setup_collimator">
+				<Original>Setup Artillery Collimator</Original>
+				<English>Setup Artillery Collimator</English>
+				<Russian>Установить орудийный коллиматор</Russian>
+			</Key>
+			<Key ID="STR_WOG_advanced_artillery_aimingpoints_setup_aimingpost">
+				<Original>Setup Aiming Post</Original>
+				<English>Setup Aiming Post</English>
+				<Russian>Установить прицельную вешку</Russian>
+			</Key>
+			<Key ID="STR_WOG_advanced_artillery_aimingpoints_adjust_collimator">
+				<Original>Adjust Collimator</Original>
+				<English>Adjust Collimator</English>
+				<Russian>Навести коллиматор</Russian>
+			</Key>
+			<Key ID="STR_WOG_advanced_artillery_aimingpoints_toggle_light">
+				<Original>Toggle Light</Original>
+				<English>Toggle Light</English>
+				<Russian>Переключить подсветку</Russian>
+			</Key>
+			<Key ID="STR_WOG_advanced_artillery_aimingpoints_move_post_light">
+				<Original>Move Post Light</Original>
+				<English>Move Post Light</English>
+				<Russian>Поднять/опустить подсветку</Russian>
+			</Key>
+			<Key ID="STR_WOG_advanced_artillery_aimingpoints_aiming_post">
+				<Original>Aiming Post</Original>
+				<English>Aiming Post</English>
+				<Russian>Прицельная вешка</Russian>
+			</Key>
+			<Key ID="STR_WOG_advanced_artillery_aimingpoints_artillery_collimator">
+				<Original>Artillery Collimator</Original>
+				<English>Artillery Collimator</English>
+				<Russian>Орудийный коллиматор</Russian>
+			</Key>
+			<Key ID="STR_WOG_advanced_artillery_aimingpoints_apost_getDistance">
+				<Original>Get distance to arty</Original>
+				<English>Get distance to arty</English>
+				<Russian>Показать дистанцию до орудия</Russian>
+			</Key>
+			<Key ID="STR_WOG_advanced_artillery_aimingpoints_apost_digging">
+				<Original>Dig In/Out Aiming Post</Original>
+				<English>Dig In/Out Aiming Post</English>
+				<Russian>Вкопать/выкопать вешку</Russian>
+			</Key>
+		</Container>
+	</Package>
 </Project>
