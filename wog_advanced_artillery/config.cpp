@@ -98,6 +98,10 @@ class CfgWeapons
 		reloadTime = 0;
 		magazineReloadTime = 0;
 		shotFromTurret = 1;
+		
+		ace_overpressure_angle = 80;
+		ace_overpressure_range = 10;
+		ace_overpressure_damage = 0.75;
 
 		class GunParticles {
 			class Effect1
