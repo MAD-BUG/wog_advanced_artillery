@@ -377,7 +377,7 @@ class CfgVehicles
         getOutAction = "";
         editorSubcategory = "EdSubcat_Turrets";
 		
-		ace_cargo_canLoad = 0;
+		ace_cargo_canLoad = 1;
 
         threat[] = {0.7, 0.3, 0};
         accuracy = 0.12;
