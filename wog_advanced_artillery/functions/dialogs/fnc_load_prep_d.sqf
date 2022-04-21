@@ -48,3 +48,9 @@ wog_advanced_artillery_start_prep = {
 		player addItemToBackpack (_args select 1);
 	}, {}, (localize "STR_WOG_advanced_artillery_Prep_charges_displayName") + "..."] call ace_common_fnc_progressBar;
 };
+
+if ((lbSize _listCtrl) > 0) then 
+{
+	_listCtrl lbSetCurSel 0;
+	[] call wog_advanced_artillery_prep_update;
+};
