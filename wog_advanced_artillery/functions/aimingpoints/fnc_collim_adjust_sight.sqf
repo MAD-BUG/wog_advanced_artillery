@@ -36,6 +36,7 @@ acex_aimingpoints_collimatorAlignVert = acex_aligningCollimator animationPhase "
 _func = {
 	_camera = (_this select 0) select 0;
 	if(acex_aimingpoints_aligning) then {
+		toFixed 6;
 		_pos = acex_aligningCollimator modelToWorld (acex_aligningCollimator selectionPosition "eye");
 		_camera camSetPos _pos;
 		_camera camSetTarget (acex_aligningCollimator modelToWorld (acex_aligningCollimator selectionPosition "look"));

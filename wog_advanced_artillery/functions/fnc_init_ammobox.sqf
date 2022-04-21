@@ -9,7 +9,7 @@ switch (_type) do
 		_box animate ["shell_3bk13_2_hide", 1, true];
 	};
 	case 2: {
-		_box setVariable ['WOG_122_boxParams', ['wog_mag_3bk13_dummy', 'wog_mag_3bk13_dummy', 'wog_mag_D30_charge_4_dummy', 'wog_mag_D30_charge_4_dummy'], true];
+		_box setVariable ['WOG_122_boxParams', ['wog_mag_3bk13_dummy', 'wog_mag_3bk13_dummy', 'wog_mag_D30_charge_full_dummy', 'wog_mag_D30_charge_full_dummy'], true];
 		_box animate ["shell_1_hide", 1, true];
 		_box animate ["shell_2_hide", 1, true];
 	};
