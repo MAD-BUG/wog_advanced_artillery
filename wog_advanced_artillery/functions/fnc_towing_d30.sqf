@@ -171,30 +171,39 @@ if (_mode == 0) then
 			["ace_common_fixCollision", _veh, _veh] call CBA_fnc_targetEvent;
 			["ace_common_fixCollision", _gun, _gun] call CBA_fnc_targetEvent;
 			
-			detach _gun;
+			//detach _gun;
 
 			private _direction = getDir _veh;
-			private _position = (AGLToASL (_gun modelToWorld [0.05, 3, -1.35])) vectorAdd [-(5.8 * sin(_direction)), -(5.8 * cos(_direction)), 0];
-			private _vectorUp = [0, 0, 1];
-			private _intersections = lineIntersectsSurfaces [_position vectorAdd [0, 0, 2.5], _position vectorDiff [0, 0, 2.5], _veh, objNull, true, 1, "GEOM", "FIRE"];
-			if (_intersections isEqualTo []) then {
-				//TRACE_1("No intersections",_intersections);
-				hint "No intersections";
-			} else {
-				(_intersections select 0) params ["_touchingPoint", "_surfaceNormal"];
-				_position = _touchingPoint vectorAdd [0, 0, 0.05];
-				_vectorUp = _surfaceNormal;
-			};
-						
-			_gun setPosASL _position;
-			_gun setDir _direction;
+			private _position = (_gun modelToWorld [0.05, 3, -1.35]) vectorAdd [-(5.8 * sin(_direction)), -(5.8 * cos(_direction)), 0];
+			private _pos2 = (AGLToASL (_gun modelToWorld [0.05, 3, -1.35])) vectorAdd [-(5.8 * sin(_direction)), -(5.8 * cos(_direction)), 0];
+			_gun attachTo [_veh, _veh worldToModel _position];
 			
-			[_gun, _vectorUp] remoteExecCall ["setVectorUp", _gun];
+			[{
+				params ["_gun", "_veh", "_position"];
+				
+				detach _gun;
+				private _direction = getDir _veh;
+				private _vectorUp = [0, 0, 1];
+				private _intersections = lineIntersectsSurfaces [_position vectorAdd [0, 0, 2.5], _position vectorDiff [0, 0, 2.5], _veh, objNull, true, 1, "GEOM", "FIRE"];
+				if (_intersections isEqualTo []) then {
+					//TRACE_1("No intersections",_intersections);
+					hint "No intersections";
+				} else {
+					(_intersections select 0) params ["_touchingPoint", "_surfaceNormal"];
+					_position = _touchingPoint vectorAdd [0, 0, 0.05];
+					_vectorUp = _surfaceNormal;
+				};
+							
+				_gun setPosASL _position;
+				_gun setDir _direction;
+				
+				[_gun, _vectorUp] remoteExecCall ["setVectorUp", _gun];
 
-			["ace_common_fixPosition", _gun, _gun] call CBA_fnc_targetEvent;
-			["ace_common_fixFloating", _gun, _gun] call CBA_fnc_targetEvent;
-			_gun setVariable ["WOG_D30_isTowed", false, true];
-			_veh setVariable ["WOG_D30_isTowing", false, true];
-		}, [_gun, _veh], 1] call CBA_fnc_waitAndExecute;
+				["ace_common_fixPosition", _gun, _gun] call CBA_fnc_targetEvent;
+				["ace_common_fixFloating", _gun, _gun] call CBA_fnc_targetEvent;
+				_gun setVariable ["WOG_D30_isTowed", false, true];
+				_veh setVariable ["WOG_D30_isTowing", false, true];
+			}, [_gun, _veh, _pos2], 1] call CBA_fnc_waitAndExecute;
+		}, [_gun, _veh], 0.5] call CBA_fnc_waitAndExecute;
 	}, {}, localize "STR_WOG_advanced_artillery_Exec_Detach_displayName"] call ace_common_fnc_progressBar;
 };
