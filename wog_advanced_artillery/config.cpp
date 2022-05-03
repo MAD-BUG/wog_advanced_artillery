@@ -554,6 +554,22 @@ class CfgVehicles
 				minValue = -500;
 				maxValue = 500;
 			};
+			class sphere_pitch_source
+			{
+				source = "user";
+				animPeriod = 0.001000;
+				initPhase = 0;
+				minValue = -1;
+				maxValue = 1;
+			};
+			class sphere_roll_source
+			{
+				source = "user";
+				animPeriod = 0.001000;
+				initPhase = 0;
+				minValue = -1;
+				maxValue = 1;
+			};
 		};
 		
 		armor = 80;
@@ -570,6 +586,21 @@ class CfgVehicles
 				"wog_advanced_artillery\pab-2m\data\pab-2m_tripod.rvmat",
 				"wog_advanced_artillery\pab-2m\data\pab-2m_tripod_damage.rvmat",
 				"wog_advanced_artillery\pab-2m\data\pab-2m_tripod_destruct.rvmat"
+			};
+		};
+		
+		class UserActions
+		{
+			class ShowLevel
+			{
+				condition = "(gunner this) == player";
+				displayName = "$STR_WOG_advanced_artillery_pab_2m_leveling_indicator";
+				priority = 3;
+				showWindow = 0;
+				onlyForPlayer = 1;
+				position = "eye";
+				radius = 2.51;
+				statement = "if (isNull(uiNamespace getVariable ['wog_pab2m_level_gui', displayNull])) then {('wog_pab2m_level_gui_layer' call BIS_fnc_rscLayer) cutRsc ['WOG_ARTY_PAB2M_level', 'PLAIN', 2, false]} else {('wog_pab2m_level_gui_layer' call BIS_fnc_rscLayer) cutText ['','PLAIN'];};";
 			};
 		};
 	};

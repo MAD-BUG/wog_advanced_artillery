@@ -8,6 +8,11 @@
 #define SIGHT_GUI_GRID_W safeZoneH*3/4/2
 #define SIGHT_GUI_GRID_H safeZoneH
 
+#define PAB2M_GUI_GRID_X safeZoneX + safeZoneH*3/4*0.15
+#define PAB2M_GUI_GRID_Y safeZoneY + safeZoneH*0.75
+#define PAB2M_GUI_GRID_W safeZoneH*3/4*0.1
+#define PAB2M_GUI_GRID_H safeZoneH*0.1
+
 class WOG_ARTY_PREP_D {
     idd = -1;
     movingEnable = 0;
@@ -377,6 +382,46 @@ class RscTitles
 			{
 				idc = 77709;
 				text = "wog_advanced_artillery\resource\data\level_main.paa";
+			};
+		};
+	};
+	
+	class WOG_ARTY_PAB2M_level
+	{
+		idd = -1;
+		duration = 1e+010;
+		movingenable = false;
+
+		fadeIn = 0; 
+		fadeOut = 0;
+		onLoad = "wog_pab2m_level_handle = _this execVM 'wog_advanced_artillery\functions\dialogs\fnc_pab2m_level.sqf';";
+		
+		class Controls
+		{
+			class WOG_ARTY_PAB2M_level_background: WOG_Arty_RscPicture
+			{
+				idc = 77807;
+				x = PAB2M_GUI_GRID_X;
+				y = PAB2M_GUI_GRID_Y;
+				w = PAB2M_GUI_GRID_W;
+				h = PAB2M_GUI_GRID_H;
+				
+				text = "wog_advanced_artillery\resource\data\pab2m_level_background.paa";
+			};
+			class WOG_ARTY_PAB2M_level_bubble: WOG_ARTY_PAB2M_level_background
+			{
+				idc = 77808;				
+				text = "wog_advanced_artillery\resource\data\pab2m_level_bubble.paa";
+			};
+			class WOG_ARTY_PAB2M_level_main: WOG_ARTY_PAB2M_level_background
+			{
+				idc = 77809;
+				text = "wog_advanced_artillery\resource\data\pab2m_level_main.paa";
+			};
+			class WOG_ARTY_PAB2M_level_edge: WOG_ARTY_PAB2M_level_background
+			{
+				idc = 77810;
+				text = "wog_advanced_artillery\resource\data\pab2m_level_edge.paa";
 			};
 		};
 	};

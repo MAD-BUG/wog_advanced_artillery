@@ -122,6 +122,11 @@ class CfgFunctions
 				file = "wog_advanced_artillery\functions\pab_2m\fnc_pab_2m_base_traverse.sqf";
 				recompile = 0;
 			};
+			class PAB_2M_base_leveling
+			{
+				file = "wog_advanced_artillery\functions\pab_2m\fnc_pab_2m_base_leveling.sqf";
+				recompile = 0;
+			};
 			class PAB_2M_uglomer_rotation
 			{
 				file = "wog_advanced_artillery\functions\pab_2m\fnc_pab_2m_uglomer_rotation.sqf";

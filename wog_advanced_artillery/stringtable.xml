@@ -423,6 +423,11 @@
 				<Czech>Vyrovnánání...</Czech>
 				<Korean>수평조절중...</Korean>
 			</Key>
+			<Key ID="STR_WOG_advanced_artillery_pab_2m_leveling_indicator">
+				<Original>&lt;t color='#CCCCCC'&gt;Show/hide level indicator&lt;/t&gt;</Original>
+				<English>&lt;t color='#CCCCCC'&gt;Show/hide level indicator&lt;/t&gt;</English>
+				<Russian>&lt;t color='#CCCCCC'&gt;Показать/спрятать уровень&lt;/t&gt;</Russian>
+			</Key>
 		</Container>
 	</Package>
 	<Package name="Aiming_points">
